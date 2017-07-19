@@ -1,32 +1,17 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
+<?php get_header() ?>
 
-		<?php wp_head() ?>
-	</head>
-	<body>
-		<header class="header">
-			<div class="center">
-				<a href="<?php echo home_url() ?>" class="logo"><?php bloginfo() ?></a>
+<?php if( ! apply_filters( 'showcase.content', false ) ): ?>
+<div class="main">
+	<div class="center">
+			<?php if ( function_exists('yoast_breadcrumb') ): ?>
+			<div class="breadcrumbs">
+				<?php yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' ) ?>
 			</div>
+			<?php endif ?>
 
-			<?php
-			$menu_args = array(
-				'theme_location'  => 'main-menu',
-				'container_class' => 'main-menu',
-				'menu_class'      => 'menu center'
-			);
+			get_template_part( 'loop' );
+	</div>
+</div>
+<?php endif ?>
 
-			$menu_args = apply_filters( 'showcase.main_menu_args', $menu_args );
-			wp_nav_menu( $menu_args );
-			?>
-		</header>
-
-		<?php if( ! apply_filters( 'showcase.content', false ) ): ?>
-			<?php the_post(); the_content() ?>
-		<?php endif ?>
-
-		<?php wp_footer() ?>
-</body>
-</html>
+<?php get_footer() ?>

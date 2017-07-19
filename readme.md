@@ -1,7 +1,8 @@
 # Ultimate Fields Showcase Theme
-If you are not familiar with Ultimate Fields or don't know what it is, you can visit our website at https://www.ultimate-fields.com.
 
-This theme contains an example of every location and every field of Ultimate Fields and how to work with them. The theme is not meant to be used neither as a starter theme, nor as a framework. It is rather made to showcase all of the functionality of Ultimate Fields and educate developers on how to use it.
+This theme contains an example of every location and every field of the Ultimate Fields plugin and how to work with them. The theme is not meant to be used neither as a starter theme, nor as a framework. It is rather made to showcase all of the functionality of Ultimate Fields and educate developers on how to use it.
+
+If you are not familiar with Ultimate Fields or don't know what it is, please visit our website at https://www.ultimate-fields.com.
 
 You can:
 1. Check the demo at https://www.ultimate-fields.com/demo/ to experience Ultimate Fields and get a feel for the functionality of the plugin.

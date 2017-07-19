@@ -1,0 +1,5 @@
+.full-width-image {  }
+.full-width-image img { width: 100%; height: auto; max-height: calc(100vh - 250px)}
+
+.image-block { }
+.image-block img { width: 100%; height: auto; }

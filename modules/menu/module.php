@@ -25,9 +25,13 @@ function showcase_menu_fields() {
 
 add_filter( 'showcase.main_menu_args', 'showcase_menu_walker' );
 function showcase_menu_walker( $args ) {
-	require_once( __DIR__ . '/class-showcase-menu-walker.php' );
+	$locations = get_nav_menu_locations();
 
-	$args[ 'walker' ] = new Showcase_Menu_Walker;
+	# Check if there is an actual menu in use in the header
+	if( isset( $locations[ 'main-menu' ] ) ) {
+		require_once( __DIR__ . '/class-showcase-menu-walker.php' );
+		$args[ 'walker' ] = new Showcase_Menu_Walker;
+	}
 
 	return $args;
 }
