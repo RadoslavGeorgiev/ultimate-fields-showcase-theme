@@ -1,14 +1,21 @@
 # Ultimate Fields Showcase Theme
-This theme contains an example of every location and field of Ultimate Fields.
+If you are not familiar with Ultimate Fields or don't know what it is, you can visit our website at https://www.ultimate-fields.com.
+
+This theme contains an example of every location and every field of Ultimate Fields and how to work with them. The theme is not meant to be used neither as a starter theme, nor as a framework. It is rather made to showcase all of the functionality of Ultimate Fields and educate developers on how to use it.
+
+You can:
+1. Check the demo at https://www.ultimate-fields.com/demo/ to experience Ultimate Fields and get a feel for the functionality of the plugin.
+2. Clone the theme within your sandbox and play with it in order to understand some of the core concepts of Ultimate Fields, including the registration of fields and containers through code.
+3. If you are working on an extension for Ultimate Fields, create a new module that shows how to interact with it.
 
 ## Installation
-You can clone the theme from GitHub and configure it locally if you have `git` and `npm` installed. If not, you can download and compile it manuall.
+You can clone the theme from GitHub and configure it locally if you have `git` and `npm` installed. If not, you can download and compile it manually.
 
 In both scenarios, please keep in mind that the theme requires __Ultimate Fields Pro__ to be installed and activated. If you use the free version of Ultimate Fields, some of the functionality of the theme will be limited.
 
 ### Command line:
 Navigate to your wp-content/themes directory and execute the following commands:
-```bash
+```shell
 git clone git@github.com:RadoslavGeorgiev/uf3-showcase-theme.git
 cd uf3-showcase-theme
 npm install
