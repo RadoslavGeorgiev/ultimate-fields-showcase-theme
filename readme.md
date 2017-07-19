@@ -1,6 +1,28 @@
 # Ultimate Fields Showcase Theme
 This theme contains an example of every location and field of Ultimate Fields.
 
+## Installation
+You can clone the theme from GitHub and configure it locally if you have `git` and `npm` installed. If not, you can download and compile it manuall.
+
+In both scenarios, please keep in mind that the theme requires __Ultimate Fields Pro__ to be installed and activated. If you use the free version of Ultimate Fields, some of the functionality of the theme will be limited.
+
+### Command line:
+Navigate to your wp-content/themes directory and execute the following commands:
+```bash
+git clone git@github.com:RadoslavGeorgiev/uf3-showcase-theme.git
+cd uf3-showcase-theme
+npm install
+gulp
+```
+
+This will download the theme and compile its styles. All you have to do is activate the theme.
+
+### Manual
+
+1. Download this repository into your `wp-content/themes` directory.
+2. Compile the SCSS file `assets/sass/style.scss` to `style.css` in the root of the theme.
+3. Activate the theme
+
 ## Examples
 
 ### Items
