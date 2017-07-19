@@ -17,6 +17,7 @@ function showcase_setup() {
 	}
 
 	// Register theme supports
+	add_theme_support( 'title-tag' );
 	register_nav_menu( 'main-menu', __( 'Main Menu', 'showcase' ) );
 }
 
@@ -41,7 +42,8 @@ function showcase_options_page() {
 
 	$modules = array(
 		'menu'            => 'Menu',
-		'shortcode-quote' => 'Shortcode (Quote)'
+		'shortcode-quote' => 'Shortcode (Quote)',
+		'events'          => 'Events post type with locations'
 	);
 
 	Container::create( 'Showcase Modules' )

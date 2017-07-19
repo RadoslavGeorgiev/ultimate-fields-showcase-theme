@@ -1,0 +1,29 @@
+.header {
+	@extend .color-secondary-1-1;
+	@extend .background-secondary-2-4;
+}
+
+.logo {
+	color: #fff;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 40px;
+}
+
+.main-menu { position: relative; }
+.menu { display: flex; list-style: none; max-width: 1220px; }
+.menu-item { padding: 10px; position: relative; transition: all .2s ease; }
+.current-menu-ancestor,
+.current-menu-item { background: #fff; }
+.menu-item.has-mega-menu { position: static; }
+.mega-menu,
+.sub-menu { position: absolute; visibility: hidden; opacity: 0; top: 100%; background: #ccc; transition: all .2s ease; }
+.sub-menu { left: 0; list-style: none; }
+.mega-menu { left: 0; width: 100%;}
+.mega-menu .center { width: 100%; display: flex; }
+.mega-menu .widget { width: 100%; padding: 20px; }
+.sub-menu,
+.mega-menu,
+.menu-item:hover { background: $color-secondary-2-3; }
+.menu-item:hover .sub-menu,
+.menu-item:hover .mega-menu { opacity: 1; visibility: visible; }

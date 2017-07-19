@@ -17,7 +17,9 @@ class Showcase_Menu_Walker extends Walker_Nav_Menu {
 		$sidebar = ob_get_clean();
 
 		return "<div class='mega-menu'>
-			$sidebar
+			<div class='center'>
+				$sidebar
+			</div>
 		</div>";
 	}
 }
