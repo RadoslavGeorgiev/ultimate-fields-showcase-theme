@@ -41,9 +41,9 @@ function showcase_options_page() {
 		->set_type( 'appearance' );
 
 	$modules = array(
-		'menu'            => 'Menu',
-		'shortcode-quote' => 'Shortcode (Quote)',
-		'events'          => 'Events post type with locations'
+		'menu'   => 'Menu',
+		'quote'  => 'Shortcode (Quote)',
+		'events' => 'Events post type with locations'
 	);
 
 	Container::create( 'Showcase Modules' )
