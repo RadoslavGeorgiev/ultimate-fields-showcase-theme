@@ -20,6 +20,11 @@ class Module_Loader {
 	 * Loads all modules from the database.
 	 */
 	public function __construct() {
+		// If the plugin is not loaded, there is nothing else to load
+		if( ! function_exists( 'ultimate_fields' ) ) {
+			return;
+		}
+
 		/**
 		 * Allow additional modules to be registered.
 		 *
