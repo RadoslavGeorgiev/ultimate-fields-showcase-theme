@@ -37,6 +37,7 @@ $center: 1100px;
 	.center {
 		display: flex;
 		max-width: calc(#{$center} + 20px);
+		justify-content: center;
 	}
 
 	&-row {
@@ -64,4 +65,9 @@ $center: 1100px;
 .breadcrumbs {
 	padding: 20px 0;
 	border-bottom: 2px solid #ddd;
+}
+
+.uf-map {
+	border: 5px solid $color-3;
+	margin: 20px 0;
 }

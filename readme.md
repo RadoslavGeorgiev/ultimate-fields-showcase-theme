@@ -46,6 +46,44 @@ This table describes what features are used in the theme and where to find them.
 | Text             | quote                   | Used for the author                              |
 | Map              | events                  | Used to set the location of events.              |
 | Sidebar          | menu                    | Used to select a sidebar for mega-menus.         |
+| Text             | -                       | -                                                |
+| Checkbox         | -                       | -                                                |
+| File             | -                       | -                                                |
+| Object           | -                       | -                                                |
+| Tab              | -                       | -                                                |
+| Date             | -                       | -                                                |
+| Complex          | -                       | -                                                |
+| Textarea         | -                       | -                                                |
+| Radio            | -                       | -                                                |
+| Image            | -                       | -                                                |
+| Objects          | -                       | -                                                |
+| Section          | -                       | -                                                |
+| DateTime         | -                       | -                                                |
+| Repeater         | -                       | -                                                |
+| WYSIWYG          | -                       | -                                                |
+| Select           | -                       | -                                                |
+| Audio            | -                       | -                                                |
+| Link             | -                       | -                                                |
+| Message          | -                       | -                                                |
+| Time             | -                       | -                                                |
+| Layout           | -                       | -                                                |
+| Password         | -                       | -                                                |
+| Multiselect      | -                       | -                                                |
+| Color            | -                       | -                                                |
+| Font             | -                       | -                                                |
+| Image Select     | -                       | -                                                |
+| Gallery          | -                       | -                                                |
+| Icon             | -                       | -                                                |
+| Video            | -                       | -                                                |
+| Map              | -                       | -                                                |
+| Embed            | -                       | -                                                |
+| Sidebar          | enchanced-pages         | -                                                |
+| Number           | -                       | -                                                |
+
+
+
+
+
 
 ### Modules
 Modules group different examples together and use the hooks in the base to display and add their content. Each module has a readme in it's own directory, which describes what features are used and what is being done there.

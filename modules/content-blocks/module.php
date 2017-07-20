@@ -23,7 +23,12 @@ function showcase_blocks_field() {
 		'type'      => 'text',
 		'min_width' => 3,
 		'fields'    => array(
-			Field::create( 'text', 'title', __( 'Title', 'showcase' ) ),
+			Field::create( 'icon', 'icon', __( 'Icon', 'showcase' ) )
+				->add_set( 'font-awesome' )
+				->set_description( __( 'This icon would be shown above the title.', 'showcase' ) )
+				->set_field_width( 35 ),
+			Field::create( 'text', 'title', __( 'Title', 'showcase' ) )
+				->set_field_width( 65 ),
 			Field::create( 'wysiwyg', 'text', __( 'Text', 'showcase' )  )
 		)
 	));
@@ -37,6 +42,8 @@ function showcase_blocks_field() {
 			Field::create( 'image', 'image', __( 'Image', 'showcase' ) ),
 			Field::create( 'checkbox', 'full_width', __( 'Full Width', 'showcase' )  )
 				->add_dependency( '__width', 12 )
+				->fancy()
+				->set_text( __( 'Let the image fill the full width of the browser.', 'showcase' ) )
 		)
 	));
 

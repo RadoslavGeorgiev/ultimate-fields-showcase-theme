@@ -23,15 +23,18 @@ function showcase_register_events() {
 }
 
 add_filter( 'showcase.content', 'showcase_events_index' );
-function showcase_events_index() {
-	if( ! is_archive( 'event' ) ) {
-		return false;
+function showcase_events_index( $show ) {
+	if( is_archive( 'event' ) ) {
+		include __DIR__ . '/archive.php';
+		return true;
 	}
 
-	echo 'map here soon';
+	if( is_singular( 'event' ) ) {
+		include __DIR__ . '/single-event.php';
+		return true;
+	}
 
-	return true;
-
+	return $show;
 }
 
 add_action( 'uf.init', function() {
@@ -47,5 +50,6 @@ add_action( 'uf.init', function() {
 				->required(),
 			Field::create( 'map', 'event_location', __( 'Location', 'showcase' ) )
 				->required()
+				->set_output_width( 1200 )
 		));
 });
