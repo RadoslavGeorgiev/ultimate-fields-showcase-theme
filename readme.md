@@ -88,6 +88,7 @@ This table describes what features are used in the theme and where to find them.
 ### Modules
 Modules group different examples together and use the hooks in the base to display and add their content. Each module has a readme in it's own directory, which describes what features are used and what is being done there.
 
-- [`menu`](modules/menu/readme.md): Showcases the usage of the `Menu_Item` location with custom sidebars and icons.
-- [`events`](modules/events/readme.md): Creates a new post type for events, featuring dates, maps and the `Post_Type` location.
-- [`quote`](modules/quote/readme.md): Showcases the usege of the `Shortcode` location to add a shortcode for a quote.
+- [`content-blocks`](modules/content-blocks): Replaces the content editor of pages with a layout field.
+- [`events`](modules/events/): Creates a new post type for events, featuring dates, maps and the `Post_Type` location.
+- [`menu`](modules/menu/): Showcases the usage of the `Menu_Item` location with custom sidebars and icons.
+- [`quote`](modules/quote/): Showcases the usege of the `Shortcode` location to add a shortcode for a quote.
