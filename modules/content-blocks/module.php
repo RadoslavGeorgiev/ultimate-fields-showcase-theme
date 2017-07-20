@@ -3,7 +3,7 @@ use UF3\Container;
 use UF3\Field;
 
 /**
- * Remove the editor from the page.
+ * Remove the normal editor from the page, as we will be using content blocks for that.
  */
 add_action( 'init', 'showcase_blocks_remove_editor' );
 function showcase_blocks_remove_editor() {
@@ -11,7 +11,7 @@ function showcase_blocks_remove_editor() {
 }
 
 /**
- * Add the layout field.
+ * Register the layout field.
  */
 add_action( 'uf.init', 'showcase_blocks_field' );
 function showcase_blocks_field() {
@@ -50,21 +50,22 @@ function showcase_blocks_field() {
 	Container::create( __( 'Page Content', 'showcase' ) )
 		->add_location( 'post_type', 'page' )
 		->add_fields(array(
-			$blocks_field
-				->hide_label()
+			$blocks_field->hide_label()
 		));
 }
 
 /**
  * Display the blocks.
+ *
+ * @param bool $display Whether to ignore the default content from the theme. Return false and display content here.
+ * @return bool
  */
 add_filter( 'showcase.content', 'showcase_blocks_content' );
 function showcase_blocks_content( $display ) {
-	if( ! is_page() ) {
-		return $display;
+	if( is_page() ) {
+		include __DIR__ . '/layout.php';
+		return true;
 	}
 
-	include __DIR__ . '/layout.php';
-
-	return true;
+	return $display;
 }

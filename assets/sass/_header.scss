@@ -40,6 +40,7 @@ $menu-animation-speed: .3s;
 .mega-menu,
 .sub-menu { position: absolute; visibility: hidden; top: 100%; background: #ccc; opacity: 0; transition: all $menu-animation-speed ease; }
 .sub-menu { left: 0; list-style: none; }
+.sub-menu a { color: #fff; }
 .mega-menu { left: 0; width: 100%;}
 .mega-menu .center { width: 100%; max-width: $center+40px; display: flex; }
 .mega-menu .widget { width: 100%; padding: 20px; }
