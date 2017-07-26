@@ -18,26 +18,30 @@ function showcase_blocks_field() {
 	$blocks_field = Field::create( 'layout', 'page_content', __( 'Content Blocks', 'showcase' ) );
 
 	// Text Blocks
-	$blocks_field->add_group(array(
+	$blocks_field->add_group( 'text', array(
 		'title'     => __( 'Text Block', 'showcase' ),
-		'type'      => 'text',
 		'min_width' => 3,
+		'icon'      => 'dashicons-format-image',
+		'max'       => 2,
 		'fields'    => array(
 			Field::create( 'icon', 'icon', __( 'Icon', 'showcase' ) )
 				->add_set( 'font-awesome' )
 				->set_description( __( 'This icon would be shown above the title.', 'showcase' ) )
 				->set_field_width( 35 ),
 			Field::create( 'text', 'title', __( 'Title', 'showcase' ) )
-				->set_field_width( 65 ),
+				->set_field_width( 65 )
+				->required(),
 			Field::create( 'wysiwyg', 'text', __( 'Text', 'showcase' )  )
+				->apply_the_content()
 		)
 	));
 
 	// Image blocks
-	$blocks_field->add_group(array(
+	$blocks_field->add_group( 'image', array(
 		'title'     => __( 'Image', 'showcase' ),
-		'type'      => 'image',
 		'min_width' => 3,
+		'icon'      => 'dashicons-editor-paragraph',
+		// 'title_background' => 'skyblue',
 		'fields'    => array(
 			Field::create( 'image', 'image', __( 'Image', 'showcase' ) ),
 			Field::create( 'checkbox', 'full_width', __( 'Full Width', 'showcase' )  )

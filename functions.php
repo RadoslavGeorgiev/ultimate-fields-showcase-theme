@@ -10,13 +10,6 @@ use UF3\Options_Page;
 define( 'SHOWCASE_DIR', __DIR__ . '/' );
 
 /**
- * To avoid un-necessary loads, disable the UI of Ultimate Fields.
- * On the demo page (ultimate-fields.com/demo) this is not enabled.
- * @var bool
- */
-define( 'UF3_DISABLE_UI', true );
-
-/**
  * Setup the theme and load modules.
  */
 add_action( 'after_setup_theme', 'showcase_setup' );
