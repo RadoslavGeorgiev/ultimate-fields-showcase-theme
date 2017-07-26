@@ -10,7 +10,8 @@ function showcase_menu_fields() {
 		))
 		->add_fields(array(
 			Field::create( 'icon', 'menu_icon', __( 'Icon', 'showcase' ) )
-				->add_set( 'font-awesome' ),
+				->add_set( 'font-awesome' )
+				->set_output_format( 'icon' ),
 			Field::create( 'select', 'sub_menu_type', __( 'Sub menu', 'showcase' ) )
 				->set_input_type( 'radio' )
 				->add_options(array(
@@ -56,10 +57,8 @@ function showcase_menu_item_title( $title, $item, $args, $depth ) {
 		return $title;
 	}
 
-	$icon = get_value( 'menu_icon', $item->ID );
-	if( $icon ) {
-		$icon  = '<span class ="fa ' . $icon . '"></span>';
-		$title = $icon . $title;
+	if( $icon = get_value( 'menu_icon', $item->ID ) ) {
+		$title = get_the_value( 'menu_icon', $item->ID ) . $title;
 	}
 
 	return $title;
