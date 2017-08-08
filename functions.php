@@ -57,6 +57,13 @@ function showcase_builtin_modules( $loader ) {
 		'path'  => SHOWCASE_DIR . 'modules/content-blocks',
 		'url'   => get_template_directory_uri() . '/modules/content-blocks'
 	));
+
+	$loader->add_module( 'colors', array(
+		'title' => __( 'Colors', 'showcase' ),
+		'pro'   => true,
+		'path'  => SHOWCASE_DIR . 'modules/colors',
+		'url'   => get_template_directory_uri() . '/modules/colors'
+	));
 }
 
 /**

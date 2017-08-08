@@ -20,6 +20,7 @@
 		$menu_args = array(
 			'theme_location'  => 'main-menu',
 			'container_class' => 'main-menu',
+			'fallback_cb'     => false,
 			'menu_class'      => 'menu center'
 		);
 

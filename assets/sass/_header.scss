@@ -23,6 +23,7 @@
 $menu-animation-speed: .3s;
 
 .main-menu { position: relative; }
+.main-menu a { color: #fff; }
 .menu { display: flex; list-style: none; }
 .menu-item { position: relative; margin-right: 10px; transition: all $menu-animation-speed ease; }
 .menu-item > a { display: block; padding: 15px; font-size: 20px; color: #333; transition: all $menu-animation-speed*2 ease; }
