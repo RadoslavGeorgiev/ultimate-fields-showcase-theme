@@ -34,35 +34,40 @@ function showcase_builtin_modules( $loader ) {
 		'title' => __( 'Quote Shortcode', 'showcase' ),
 		'pro'   => true,
 		'path'  => SHOWCASE_DIR . 'modules/quote',
-		'url'   => get_template_directory_uri() . '/modules/quote'
+		'url'   => get_template_directory_uri() . '/modules/quote',
+		'redirect' => home_url( '/' ), // @todo: Add a proper URL
 	));
 
 	$loader->add_module( 'events', array(
 		'title' => __( 'Events', 'showcase' ),
 		'pro'   => true,
 		'path'  => SHOWCASE_DIR . 'modules/events',
-		'url'   => get_template_directory_uri() . '/modules/events'
+		'url'   => get_template_directory_uri() . '/modules/events',
+		'redirect' => home_url( '/' ), // @todo: Add a proper URL
 	));
 
 	$loader->add_module( 'menu', array(
-		'title' => __( 'Mega Menu', 'showcase' ),
-		'pro'   => true,
-		'path'  => SHOWCASE_DIR . 'modules/menu',
-		'url'   => get_template_directory_uri() . '/modules/menu'
+		'title'    => __( 'Mega Menu', 'showcase' ),
+		'pro'      => true,
+		'path'     => SHOWCASE_DIR . 'modules/menu',
+		'url'      => get_template_directory_uri() . '/modules/menu',
+		'redirect' => home_url( '/' ), // @todo: Add a proper URL
 	));
 
 	$loader->add_module( 'content-blocks', array(
-		'title' => __( 'Content Blocks', 'showcase' ),
-		'pro'   => true,
-		'path'  => SHOWCASE_DIR . 'modules/content-blocks',
-		'url'   => get_template_directory_uri() . '/modules/content-blocks'
+		'title'    => __( 'Content Blocks', 'showcase' ),
+		'pro'      => true,
+		'path'     => SHOWCASE_DIR . 'modules/content-blocks',
+		'url'      => get_template_directory_uri() . '/modules/content-blocks',
+		'redirect' => home_url( '/' ), // @todo: Add a proper URL
 	));
 
 	$loader->add_module( 'colors', array(
-		'title' => __( 'Colors', 'showcase' ),
-		'pro'   => true,
-		'path'  => SHOWCASE_DIR . 'modules/colors',
-		'url'   => get_template_directory_uri() . '/modules/colors'
+		'title'    => __( 'Colors', 'showcase' ),
+		'pro'      => true,
+		'path'     => SHOWCASE_DIR . 'modules/colors',
+		'url'      => get_template_directory_uri() . '/modules/colors',
+		'redirect' => home_url( 'wp-admin/customize.php?autofocus[section]=uf_section_theme_colors' ), // @todo: Add a proper URL
 	));
 }
 

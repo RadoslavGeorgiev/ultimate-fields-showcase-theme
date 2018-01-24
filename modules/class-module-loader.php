@@ -71,8 +71,9 @@ class Module_Loader {
 			|| ! isset( $module['pro'] )
 			|| ! isset( $module['path'] )
 			|| ! isset( $module['url'] )
+			|| ! isset( $module['redirect'] )
 		) {
-			wp_die( 'A module needs the following attributes: title, pro, path and url' );
+			wp_die( 'A module needs the following attributes: title, pro, path, url and redirect!' );
 		}
 
 		$module['path'] = trailingslashit( $module['path'] );
@@ -120,5 +121,16 @@ class Module_Loader {
 					->set_input_type( 'checkbox' )
 					->add_options( $modules )
 			));
+	}
+
+	/**
+	 * Returns all registered modules.
+	 *
+	 * @since 3.0
+	 *
+	 * @return stdClass[]
+	 */
+	public function get_modules() {
+		return $this->modules;
 	}
 }
