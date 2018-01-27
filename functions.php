@@ -69,6 +69,14 @@ function showcase_builtin_modules( $loader ) {
 		'url'      => get_template_directory_uri() . '/modules/colors',
 		'redirect' => home_url( 'wp-admin/customize.php?autofocus[section]=uf_section_theme_colors' ), // @todo: Add a proper URL
 	));
+
+	$loader->add_module( 'accordion-widget', array(
+		'title'    => __( 'Accordion Widget', 'showcase' ),
+		'pro'      => false,
+		'path'     => SHOWCASE_DIR . 'modules/accordion-widget',
+		'url'      => get_template_directory_uri() . '/modules/accordion-widget',
+		'redirect' => home_url( 'wp-admin/widgets.php' )
+	));
 }
 
 /**
@@ -103,6 +111,7 @@ function showcase_scripts_styles() {
 	wp_enqueue_style( 'lato-font', 'https://fonts.googleapis.com/css?family=Lato:300,400,700' );
 	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_style( 'showcase', get_stylesheet_uri() );
+	wp_enqueue_script( 'jquery' );
 }
 
 /**

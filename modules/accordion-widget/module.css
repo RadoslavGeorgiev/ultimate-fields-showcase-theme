@@ -1,0 +1,5 @@
+.widget-section { background: #fff; }
+.widget-section + .widget-section { border-top: 1px solid #ddd; }
+.widget-section__title { cursor: pointer; padding: 10px; }
+.widget-section__text { display: none; padding: 0 10px 10px; }
+.widget-section--visible .widget-section__text { display: block; }
