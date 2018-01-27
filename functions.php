@@ -88,8 +88,10 @@ function showcase_options_page() {
 add_action( 'widgets_init', 'showcase_sidebars' );
 function showcase_sidebars() {
 	register_sidebar(array(
-		'id'   => 'default-sidebar',
-		'name' => __( 'Default sidebar', 'showcase' )
+		'id'            => 'default-sidebar',
+		'name'          => __( 'Default sidebar', 'showcase' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
 	));
 }
 

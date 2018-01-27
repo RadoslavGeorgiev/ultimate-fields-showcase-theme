@@ -24,6 +24,7 @@ $center: 1100px;
 .center {
 	max-width: $center;
 	margin: 0 auto;
+	overflow: hidden;
 }
 
 .main {
@@ -63,8 +64,9 @@ $center: 1100px;
 }
 
 .breadcrumbs {
-	padding: 20px 0;
+	padding-bottom: 20px;
 	border-bottom: 2px solid #ddd;
+	margin-bottom: 20px;
 }
 
 .uf-map {
