@@ -23,7 +23,7 @@ class Showcase_Accordion_Widget extends Custom_Widget {
 			));
 	}
 
-	public function widget( $args ) {
+	public function widget( $args, $instance ) {
 		if( empty( get_value( 'sections', 'widget' ) ) ) {
 			return;
 		}
