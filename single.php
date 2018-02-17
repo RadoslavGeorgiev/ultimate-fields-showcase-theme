@@ -1,28 +1,23 @@
 <?php get_header() ?>
 
-<div class="main">
-	<div class="center">
-		<?php if ( function_exists('yoast_breadcrumb') ): ?>
-		<div class="breadcrumbs">
-			<?php yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' ) ?>
-		</div>
-		<?php endif ?>
-
-		<div class="content">
+<?php if( ! apply_filters( 'showcase.content', false ) ): ?>
+<div class="section main page-content">
+	<div class="section__center page-content__center">
+		<div class="page-content__main">
 			<?php while( have_posts() ): the_post() ?>
-				<div <?php post_class() ?>>
-					<div class="rte">
-						<h1><?php the_title() ?></h1>
-						<?php the_content() ?>
-					</div>
+			<div <?php post_class() ?>>
+				<div class="rte">
+					<?php the_content() ?>
 				</div>
+			</div>
 			<?php endwhile ?>
 		</div>
 
-		<div class="sidebar">
+		<div class="page-content__sidebar">
 			<?php dynamic_sidebar( 'default-sidebar' ) ?>
 		</div>
 	</div>
 </div>
+<?php endif ?>
 
 <?php get_footer() ?>

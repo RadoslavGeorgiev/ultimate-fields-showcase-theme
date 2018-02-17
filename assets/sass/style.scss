@@ -3,11 +3,10 @@
  */
 
 // Meta
-@import 'colors';
+@import 'variables';
 
 // Styles
 @import 'main';
-@import 'widgets';
 @import 'header';
-@import 'single';
-@import 'content-blocks';
+@import 'content';
+@import 'widgets';

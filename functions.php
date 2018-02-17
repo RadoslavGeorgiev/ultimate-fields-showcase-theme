@@ -9,6 +9,7 @@ function showcase_setup() {
 	require_once __DIR__ . '/lib/fallback-menu.php';
 	require_once __DIR__ . '/lib/theme-init.php';
 	require_once __DIR__ . '/lib/template-helpers.php';
+	require_once __DIR__ . '/lib/demo-data.php';
 
 	// Include the module loader and initialize it
 	require_once __DIR__ . '/modules/class-module-loader.php';

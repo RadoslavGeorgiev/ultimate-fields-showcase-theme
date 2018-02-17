@@ -1,3 +1,22 @@
-.widgettitle {
-	margin-bottom: .5em;
+.widget + .widget {
+    margin-top: 2em;
+}
+
+// Generic widgets
+.widget {
+    padding: 0 20px;
+
+    &__title {
+        padding: 0 20px 8px;
+        margin: 0 -20px 8px;
+        border-bottom: 4px solid $main-color;
+    }
+
+    &__body {
+        padding: 0 20px;
+    }
+
+    ul, ol {
+        list-style: none outside none;
+    }
 }

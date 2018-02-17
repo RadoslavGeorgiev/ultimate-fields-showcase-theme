@@ -1,15 +1,15 @@
 <?php get_header() ?>
 
 <?php if( ! apply_filters( 'showcase.content', false ) ): ?>
-<div class="main">
-	<div class="center">
-		<?php if ( function_exists('yoast_breadcrumb') ): ?>
-		<div class="breadcrumbs">
-			<?php yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' ) ?>
+<div class="section main page-content">
+	<div class="section__center page-content__center">
+		<div class="page-content__main">
+			<?php get_template_part( 'loop' ); ?>
 		</div>
-		<?php endif ?>
 
-		<?php get_template_part( 'loop' ); ?>
+		<div class="page-content__sidebar">
+			<?php dynamic_sidebar( 'default-sidebar' ) ?>
+		</div>
 	</div>
 </div>
 <?php endif ?>

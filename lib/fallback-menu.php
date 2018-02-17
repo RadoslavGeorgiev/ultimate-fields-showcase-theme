@@ -16,7 +16,7 @@ function showcase_fallback_menu() {
         $items[] = array(
             'href'   => home_url( '/' ),
             'text'   => __( 'Home', 'showcase' ),
-            'active' => is_home() || is_front_page()
+            'active' => is_home() || is_front_page() || is_single()
         );
     }
 
@@ -28,18 +28,17 @@ function showcase_fallback_menu() {
         );
     }
 
-    echo '<div class="main-menu">';
-        echo '<ul class="menu center">';
-        foreach( $items as $item ) {
-            printf(
-                '<li class="menu-item %s">
-                    <a href="%s">%s</a>
-                </li>',
-                $item['active'] ? 'current-menu-item' : '',
-                esc_attr( $item['href'] ),
-                esc_html( $item['text'] )
-            );
-        }
-        echo '</ul>';
-    echo '</div>';
+    // Display
+    echo '<ul class="main-menu">';
+    foreach( $items as $item ) {
+        printf(
+            '<li class="menu-item %s">
+                <a href="%s">%s</a>
+            </li>',
+            $item['active'] ? 'current-menu-item' : '',
+            esc_attr( $item['href'] ),
+            esc_html( $item['text'] )
+        );
+    }
+    echo '</ul>';
 }

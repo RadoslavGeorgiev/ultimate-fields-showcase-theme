@@ -18,16 +18,30 @@ function showcase_options_page() {
 }
 
 /**
+ * Returns the generic arguments for sidebar creation.
+ *
+ * @return array
+ */
+function showcase_get_default_sidebar_args() {
+	return array(
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'before_title'  => '<h2 class="widget__title">',
+		'after_title'   => '</h2>',
+		'after_widget'  => '</div>',
+	);
+}
+
+/**
  * Initialize sidebars.
  */
 add_action( 'widgets_init', 'showcase_sidebars' );
 function showcase_sidebars() {
-	register_sidebar(array(
-		'id'            => 'default-sidebar',
-		'name'          => __( 'Default sidebar', 'showcase' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-	));
+	$args = wp_parse_args( array(
+		'id'   => 'default-sidebar',
+		'name' => __( 'Default sidebar', 'showcase' )
+	), showcase_get_default_sidebar_args() );
+
+	register_sidebar( $args );
 }
 
 /**
@@ -35,7 +49,6 @@ function showcase_sidebars() {
  */
 add_action( 'wp_enqueue_scripts', 'showcase_scripts_styles' );
 function showcase_scripts_styles() {
-	wp_enqueue_style( 'lato-font', 'https://fonts.googleapis.com/css?family=Lato:300,400,700' );
 	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_style( 'showcase', get_stylesheet_uri() );
 }
