@@ -1,0 +1,14 @@
+.team {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.team__department {
+	border-bottom: 1px solid #ccc;
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+
+.team__member {
+	margin-bottom: 10px;
+}
