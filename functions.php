@@ -20,6 +20,7 @@ function showcase_setup() {
 
 	// Register theme supports
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'post-thumbnails' );
 	register_nav_menu( 'main-menu', __( 'Main Menu', 'showcase' ) );
 }
 
