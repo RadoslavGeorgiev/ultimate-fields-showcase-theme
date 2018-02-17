@@ -63,3 +63,19 @@ function showcase_menu_item_title( $title, $item, $args, $depth ) {
 
 	return $title;
 }
+
+/**
+ * Ensures that there is a menu to redirect to and assigns it to the "Main menu" location.
+ *
+ * @return string
+ */
+function showcase_create_main_menu() {
+	if( empty( get_terms( 'nav_menu', 'hide_empty=' ) ) ) {
+		$menu_id = wp_create_nav_menu( 'Main Menu' );
+		$locations = get_theme_mod( 'nav_menu_locations' );
+		$locations['nav-menu'] = $menu_id;
+		set_theme_mod('nav_menu_locations', $locations);
+	}
+
+	return admin_url( 'nav-menus.php' );
+}

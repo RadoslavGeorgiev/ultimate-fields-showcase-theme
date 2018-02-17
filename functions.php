@@ -35,7 +35,7 @@ function showcase_builtin_modules( $loader ) {
 		'pro'   => true,
 		'path'  => SHOWCASE_DIR . 'modules/quote',
 		'url'   => get_template_directory_uri() . '/modules/quote',
-		'redirect' => home_url( '/' ), // @todo: Add a proper URL
+		'redirect' => admin_url( 'post.php?post=1&action=edit' )
 	));
 
 	$loader->add_module( 'events', array(
@@ -51,7 +51,7 @@ function showcase_builtin_modules( $loader ) {
 		'pro'      => true,
 		'path'     => SHOWCASE_DIR . 'modules/menu',
 		'url'      => get_template_directory_uri() . '/modules/menu',
-		'redirect' => home_url( '/' ), // @todo: Add a proper URL
+		'redirect' => 'showcase_create_main_menu'
 	));
 
 	$loader->add_module( 'content-blocks', array(
@@ -59,7 +59,9 @@ function showcase_builtin_modules( $loader ) {
 		'pro'      => true,
 		'path'     => SHOWCASE_DIR . 'modules/content-blocks',
 		'url'      => get_template_directory_uri() . '/modules/content-blocks',
-		'redirect' => home_url( '/' ), // @todo: Add a proper URL
+		'redirect' => function() {
+			return admin_url( 'post.php?post=2&action=edit' );
+		}
 	));
 
 	$loader->add_module( 'colors', array(
