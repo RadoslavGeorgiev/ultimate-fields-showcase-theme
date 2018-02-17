@@ -1,21 +1,18 @@
 <?php
-use UF3\Container;
-use UF3\Field;
-use UF3\Options_Page;
-
 /**
  * Setup the theme and load modules.
  */
 add_action( 'after_setup_theme', 'showcase_setup' );
 function showcase_setup() {
+	// Include generic functions
+	require_once __DIR__ . '/lib/plugin-check.php';
+	require_once __DIR__ . '/lib/fallback-menu.php';
+	require_once __DIR__ . '/lib/theme-init.php';
+	require_once __DIR__ . '/lib/template-helpers.php';
+
 	// Include the module loader and initialize it
 	require_once __DIR__ . '/modules/class-module-loader.php';
-	$GLOBALS['showcase_loader'] = new Module_Loader;
-
-	// Register theme supports
-	add_theme_support( 'title-tag' );
-	add_theme_support( 'post-thumbnails' );
-	register_nav_menu( 'main-menu', __( 'Main Menu', 'showcase' ) );
+	Module_Loader::get_instance();
 }
 
 /**
@@ -74,54 +71,4 @@ function showcase_builtin_modules( $loader ) {
 		'url'      => get_template_directory_uri() . '/modules/accordion-widget',
 		'redirect' => home_url( 'wp-admin/widgets.php' )
 	));
-}
-
-/**
- * Add a page for theme options and module control.
- */
-add_action( 'uf.init', 'showcase_options_page' );
-function showcase_options_page() {
-	$page = Options_Page::create( 'theme-options', __( 'Theme Options', 'showcase' ) )
-		->set_type( 'appearance' );
-
-	$GLOBALS['showcase_loader']->register_options_container( $page );
-}
-
-/**
- * Initialize sidebars.
- */
-add_action( 'widgets_init', 'showcase_sidebars' );
-function showcase_sidebars() {
-	register_sidebar(array(
-		'id'            => 'default-sidebar',
-		'name'          => __( 'Default sidebar', 'showcase' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-	));
-}
-
-/**
- * Enqueue scripts and styles for enabled modules.
- */
-add_action( 'wp_enqueue_scripts', 'showcase_scripts_styles' );
-function showcase_scripts_styles() {
-	wp_enqueue_style( 'lato-font', 'https://fonts.googleapis.com/css?family=Lato:300,400,700' );
-	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
-	wp_enqueue_style( 'showcase', get_stylesheet_uri() );
-	wp_enqueue_script( 'jquery' );
-}
-
-/**
- * Generates the title of the current page (in the header).
- *
- * @return string
- */
-function showcase_get_title() {
-	if( is_archive() ) {
-		return get_the_archive_title();
-	} elseif( is_404() ) {
-		return '404';
-	} else {
-		return get_the_title();
-	}
 }

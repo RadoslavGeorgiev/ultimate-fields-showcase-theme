@@ -17,9 +17,24 @@ class Module_Loader {
 	protected $modules = array();
 
 	/**
+	 * Creates and returns an instance of the loader.
+	 *
+	 * @return Module_Loader
+	 */
+	public static function get_instance() {
+		static $instance;
+
+		if( is_null( $instance ) ) {
+			$instance = new self;
+		}
+
+		return $instance;
+	}
+
+	/**
 	 * Loads all modules from the database.
 	 */
-	public function __construct() {
+	private function __construct() {
 		// If the plugin is not loaded, there is nothing else to load
 		if( ! function_exists( 'ultimate_fields' ) ) {
 			return;
@@ -89,7 +104,7 @@ class Module_Loader {
 	public function enqueue_scripts_and_styles() {
 		foreach( $this->modules as $id => $module ) {
 			if( file_exists( $module['path'] . 'module.js' ) ) {
-				wp_enqueue_script( $id . '-js', $module['url'] . 'module.js' );
+				wp_enqueue_script( $id . '-js', $module['url'] . 'module.js', array( 'jquery' ) );
 			}
 
 			if( file_exists( $module['path'] . 'module.css' ) ) {
