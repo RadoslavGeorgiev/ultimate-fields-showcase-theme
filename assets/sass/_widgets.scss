@@ -20,3 +20,26 @@
         list-style: none outside none;
     }
 }
+
+// Search form
+.search-form {
+	display: flex;
+
+	&__field {
+		background: #fff;
+		border: none;
+		height: 36px;
+		line-height: 16px;
+		padding: 10px;
+		flex-grow: 1;
+	}
+
+	&__submit {
+		border: none;
+		cursor: pointer;
+		background: $main-color;
+		line-height: 36px;
+		width: 36px;
+		color: #fff;
+	}
+}

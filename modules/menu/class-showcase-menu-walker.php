@@ -16,8 +16,8 @@ class Showcase_Menu_Walker extends Walker_Nav_Menu {
 		dynamic_sidebar( $id );
 		$sidebar = ob_get_clean();
 
-		return "<div class='mega-menu'>
-			<div class='center'>
+		return "<div class='section mega-menu'>
+			<div class='section__center mega-menu__center'>
 				$sidebar
 			</div>
 		</div>";
