@@ -41,13 +41,22 @@ function showcase_blocks_field() {
 		'title'     => __( 'Image', 'showcase' ),
 		'min_width' => 3,
 		'icon'      => 'dashicons-editor-paragraph',
-		// 'title_background' => 'skyblue',
 		'fields'    => array(
 			Field::create( 'image', 'image', __( 'Image', 'showcase' ) ),
 			Field::create( 'checkbox', 'full_width', __( 'Full Width', 'showcase' )  )
 				->add_dependency( '__width', 12 )
 				->fancy()
 				->set_text( __( 'Let the image fill the full width of the browser.', 'showcase' ) )
+		)
+	));
+
+	// Video blocks
+	$blocks_field->add_group( 'video', array(
+		'title'     => __( 'Video', 'showcase' ),
+		'min_width' => 6,
+		'icon'      => 'dashicons-format-video',
+		'fields'    => array(
+			Field::create( 'video', 'video', __( 'Video', 'showcase' ) )
 		)
 	));
 

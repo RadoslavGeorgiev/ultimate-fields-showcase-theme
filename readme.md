@@ -46,38 +46,36 @@ This table describes what features are used in the theme and where to find them.
 | Text             | quote                   | Used for the author                              |
 | Map              | events                  | Used to set the location of events.              |
 | Sidebar          | menu                    | Used to select a sidebar for mega-menus.         |
-| Text             | -                       | -                                                |
+| Text             | team                    | Used for team member names                       |
 | Checkbox         | -                       | -                                                |
 | File             | -                       | -                                                |
 | Object           | -                       | -                                                |
 | Tab              | -                       | -                                                |
-| Date             | -                       | -                                                |
+| Date             | events                  | Used to select the beginning and end of events.  |
 | Complex          | -                       | -                                                |
 | Textarea         | -                       | -                                                |
 | Radio            | -                       | -                                                |
 | Image            | -                       | -                                                |
 | Objects          | related-posts           | Used to select the related posts.                |
 | Section          | -                       | -                                                |
-| DateTime         | -                       | -                                                |
 | Repeater         | team                    | Used to add departments and teams to the team page. |
-| WYSIWYG          | -                       | -                                                |
+| WYSIWYG          | team                    | Used for the individual team-member bios.        |
 | Select           | -                       | -                                                |
 | Audio            | -                       | -                                                |
 | Link             | -                       | -                                                |
 | Message          | -                       | -                                                |
-| Time             | -                       | -                                                |
-| Layout           | -                       | -                                                |
+| Layout           | content-blocks          | Works as the base of the blocks field.           |
 | Password         | -                       | -                                                |
 | Multiselect      | -                       | -                                                |
-| Color            | -                       | -                                                |
+| Color            | colors                  | -                                                |
 | Font             | -                       | -                                                |
 | Image Select     | -                       | -                                                |
 | Gallery          | -                       | -                                                |
 | Icon             | -                       | -                                                |
 | Video            | -                       | -                                                |
-| Map              | -                       | -                                                |
+| Map              | events                  | -                                                |
 | Embed            | -                       | -                                                |
-| Sidebar          | enchanced-pages         | -                                                |
+| Sidebar          | menu                    | -                                                |
 | Number           | -                       | -                                                |
 
 
