@@ -1,25 +1,30 @@
 {
-  "name": "uf3-showcase",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "ultimate-fields-showscase-theme",
+  "version": "2.0.0",
+  "description": "A WordPress theme, which showcases all features of Ultimate Fields.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "build": "gulp",
+      "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RadoslavGeorgiev/uf3-showcase-theme.git"
+    "url": "git+https://github.com/RadoslavGeorgiev/ultimate-fields-showcase-theme.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "ultimate-fields",
+    "wordpress",
+    "theme",
+    "custom-fields"
+  ],
+  "author": "Radoslav Georgiev",
+  "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/RadoslavGeorgiev/uf3-showcase-theme/issues"
+    "url": "https://github.com/RadoslavGeorgiev/ultimate-fields-showcase-theme/issues"
   },
-  "homepage": "https://github.com/RadoslavGeorgiev/uf3-showcase-theme#readme",
+  "homepage": "https://github.com/RadoslavGeorgiev/ultimate-fields-showcase-theme#readme",
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.0"
+    "gulp-sourcemaps": "^2.6.4"
   }
 }

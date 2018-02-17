@@ -4,18 +4,12 @@ use UF3\Field;
 use UF3\Options_Page;
 
 /**
- * Holds the root of the theme for includes.
- * @var string
- */
-define( 'SHOWCASE_DIR', __DIR__ . '/' );
-
-/**
  * Setup the theme and load modules.
  */
 add_action( 'after_setup_theme', 'showcase_setup' );
 function showcase_setup() {
 	// Include the module loader and initialize it
-	require_once SHOWCASE_DIR . 'modules/class-module-loader.php';
+	require_once __DIR__ . '/modules/class-module-loader.php';
 	$GLOBALS['showcase_loader'] = new Module_Loader;
 
 	// Register theme supports
@@ -34,7 +28,7 @@ function showcase_builtin_modules( $loader ) {
 	$loader->add_module( 'quote', array(
 		'title' => __( 'Quote Shortcode', 'showcase' ),
 		'pro'   => true,
-		'path'  => SHOWCASE_DIR . 'modules/quote',
+		'path'  => __DIR__ . '/modules/quote',
 		'url'   => get_template_directory_uri() . '/modules/quote',
 		'redirect' => admin_url( 'post.php?post=1&action=edit' )
 	));
@@ -42,7 +36,7 @@ function showcase_builtin_modules( $loader ) {
 	$loader->add_module( 'events', array(
 		'title' => __( 'Events', 'showcase' ),
 		'pro'   => true,
-		'path'  => SHOWCASE_DIR . 'modules/events',
+		'path'  => __DIR__ . '/modules/events',
 		'url'   => get_template_directory_uri() . '/modules/events',
 		'redirect' => home_url( '/' ), // @todo: Add a proper URL
 	));
@@ -50,7 +44,7 @@ function showcase_builtin_modules( $loader ) {
 	$loader->add_module( 'menu', array(
 		'title'    => __( 'Mega Menu', 'showcase' ),
 		'pro'      => true,
-		'path'     => SHOWCASE_DIR . 'modules/menu',
+		'path'     => __DIR__ . '/modules/menu',
 		'url'      => get_template_directory_uri() . '/modules/menu',
 		'redirect' => 'showcase_create_main_menu'
 	));
@@ -58,7 +52,7 @@ function showcase_builtin_modules( $loader ) {
 	$loader->add_module( 'content-blocks', array(
 		'title'    => __( 'Content Blocks', 'showcase' ),
 		'pro'      => true,
-		'path'     => SHOWCASE_DIR . 'modules/content-blocks',
+		'path'     => __DIR__ . '/modules/content-blocks',
 		'url'      => get_template_directory_uri() . '/modules/content-blocks',
 		'redirect' => function() {
 			return admin_url( 'post.php?post=2&action=edit' );
@@ -68,7 +62,7 @@ function showcase_builtin_modules( $loader ) {
 	$loader->add_module( 'colors', array(
 		'title'    => __( 'Colors', 'showcase' ),
 		'pro'      => true,
-		'path'     => SHOWCASE_DIR . 'modules/colors',
+		'path'     => __DIR__ . '/modules/colors',
 		'url'      => get_template_directory_uri() . '/modules/colors',
 		'redirect' => home_url( 'wp-admin/customize.php?autofocus[section]=uf_section_theme_colors' ), // @todo: Add a proper URL
 	));
@@ -76,7 +70,7 @@ function showcase_builtin_modules( $loader ) {
 	$loader->add_module( 'accordion-widget', array(
 		'title'    => __( 'Accordion Widget', 'showcase' ),
 		'pro'      => false,
-		'path'     => SHOWCASE_DIR . 'modules/accordion-widget',
+		'path'     => __DIR__ . '/modules/accordion-widget',
 		'url'      => get_template_directory_uri() . '/modules/accordion-widget',
 		'redirect' => home_url( 'wp-admin/widgets.php' )
 	));

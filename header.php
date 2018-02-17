@@ -11,7 +11,7 @@
 			<div class="logo">
 				<a href="<?php echo home_url() ?>"><?php bloginfo() ?></a>
 				<?php if( $title = showcase_get_title() ): ?>
-				<strong><?php echo $title ?></strong>
+					<strong><?php echo $title ?></strong>
 				<?php endif ?>
 			</div>
 		</div>
