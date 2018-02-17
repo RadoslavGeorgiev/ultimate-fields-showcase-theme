@@ -66,7 +66,7 @@ function showcase_blocks_field() {
  */
 add_filter( 'showcase.content', 'showcase_blocks_content' );
 function showcase_blocks_content( $display ) {
-	if( is_page() ) {
+	if( is_page() && ! $display ) {
 		include __DIR__ . '/layout.php';
 		return true;
 	}

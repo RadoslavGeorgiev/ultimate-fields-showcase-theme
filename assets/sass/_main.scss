@@ -41,4 +41,9 @@ h1 {
 .main {
     background-color: #fff;
     color: #333;
+    overflow: hidden;
+}
+
+.main-background {
+    background-color: $main-color;
 }

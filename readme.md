@@ -20,7 +20,7 @@ Navigate to your wp-content/themes directory and execute the following commands:
 git clone git@github.com:RadoslavGeorgiev/uf3-showcase-theme.git
 cd uf3-showcase-theme
 npm install
-gulp
+npm run build
 ```
 
 This will download the theme and compile its styles. All you have to do is activate the theme.
@@ -56,10 +56,10 @@ This table describes what features are used in the theme and where to find them.
 | Textarea         | -                       | -                                                |
 | Radio            | -                       | -                                                |
 | Image            | -                       | -                                                |
-| Objects          | -                       | -                                                |
+| Objects          | related-posts           | Used to select the related posts.                |
 | Section          | -                       | -                                                |
 | DateTime         | -                       | -                                                |
-| Repeater         | -                       | -                                                |
+| Repeater         | team                    | Used to add departments and teams to the team page. |
 | WYSIWYG          | -                       | -                                                |
 | Select           | -                       | -                                                |
 | Audio            | -                       | -                                                |
@@ -86,9 +86,10 @@ This table describes what features are used in the theme and where to find them.
 
 
 ### Modules
-Modules group different examples together and use the hooks in the base to display and add their content. Each module has a readme in it's own directory, which describes what features are used and what is being done there.
+Modules group different examples together and use the hooks in the base to display and add their content. Each module has a readme in its own directory, which describes what features are used and what is being done there.
 
 - [`content-blocks`](modules/content-blocks): Replaces the content editor of pages with a layout field.
 - [`events`](modules/events/): Creates a new post type for events, featuring dates, maps and the `Post_Type` location.
 - [`menu`](modules/menu/): Showcases the usage of the `Menu_Item` location with custom sidebars and icons.
 - [`quote`](modules/quote/): Showcases the usege of the `Shortcode` location to add a shortcode for a quote.
+- [`related-posts`](modules/related-posts/): Adds fields for other related posts to post edit screens.

@@ -58,7 +58,8 @@ function showcase_menu_item_title( $title, $item, $args, $depth ) {
 	}
 
 	if( $icon = get_value( 'menu_icon', $item->ID ) ) {
-		$title = get_the_value( 'menu_icon', $item->ID ) . $title;
+		$icon = '<span class="menu-icon">' . get_the_value( 'menu_icon', $item->ID ) . '</span>';
+		$title = $icon . $title;
 	}
 
 	return $title;

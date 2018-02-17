@@ -1,8 +1,6 @@
-<div class="main">
-	<div class="center">
+<div class="section main">
+	<div class="section__center">
 		<?php while( have_posts() ): the_post() ?>
-			<h1><?php the_title() ?></h1>
-
 			<?php the_value( 'event_location' ) ?>
 
 			<div class="rte">

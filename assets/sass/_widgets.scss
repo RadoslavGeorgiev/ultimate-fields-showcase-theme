@@ -1,4 +1,4 @@
-.widget + .widget {
+.page-content__sidebar .widget + .widget {
     margin-top: 2em;
 }
 
@@ -22,8 +22,14 @@
 }
 
 // Search form
+.widget_search {
+    display: flex;
+    align-items: center;
+}
+
 .search-form {
 	display: flex;
+    flex: 0 0 100%;
 
 	&__field {
 		background: #fff;

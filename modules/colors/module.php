@@ -10,12 +10,13 @@ add_action( 'uf.init', 'showcase_colors_fields' );
 function showcase_colors_fields() {
 	// This container lets us adjust the general colors of the theme
 	Container::create( 'theme-colors', __( 'Theme colors', 'showcase' ) )
-		->add_location( 'options', false, [
+		->add_location( 'options', $GLOBALS['showcase_options_page'], [
 			'show_in_customizer' => true,
-			'postmessage_fields' => [ 'header_color' ]
+			'postmessage_fields' => [ 'main_color' ]
 		])
 		->add_fields(array(
-			Field::create( 'color', 'header_color', __( 'Header color', 'showcase' ) )
+			Field::create( 'color', 'main_color', __( 'Main color', 'showcase' ) )
+				->set_default_value( '#006b67' )
 		));
 }
 
@@ -24,12 +25,16 @@ function showcase_colors_fields() {
  */
 add_action( 'wp_head', 'showcase_colors_css' );
 function showcase_colors_css() {
-	$color = get_value( 'header_color', 'option' );
+	$color = get_value( 'main_color', 'option' );
 
 	?>
 	<style media="screen">
-	.header {
+	body, .main-background {
 		background-color: <?php echo $color ?>;
+	}
+
+	.main-border {
+		border-color: <?php echo $color ?>;
 	}
 	</style>
 	<?php

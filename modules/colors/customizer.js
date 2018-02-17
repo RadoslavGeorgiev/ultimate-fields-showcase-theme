@@ -1,3 +1,6 @@
-UF3.customize.bind( 'header_color', function( value, context ) {
-	document.querySelector( '.header' ).style.backgroundColor = value;
+UF3.customize.bind( 'main_color', function( value, context ) {
+
+	$( 'body, .main-background' ).css( 'backgroundColor', value );
+	$( '.main-border' ).css( 'borderColor', value );
+
 });

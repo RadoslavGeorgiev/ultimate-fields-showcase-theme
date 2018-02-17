@@ -1,6 +1,51 @@
+.menu-icon {
+	display: inline-block;
+	padding-right: 8px;
+	font-size: 1.2em;
+}
+
 .mega-menu {
 	position: absolute;
 	top: 100%;
 	left: 0;
 	right: 0;
+	background: #ddd;
+	color: #333;
+	line-height: 1;
+	display: none;
+}
+
+.has-mega-menu:hover > a {
+	background: #ddd;
+	color: #333;
+}
+
+.has-mega-menu:hover .mega-menu {
+	display: block;
+}
+
+.mega-menu__center {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 5px 0;
+}
+
+.mega-menu .widget {
+	padding: 20px;
+	flex: 0 0 33%;
+	background: #eee;
+	border: 1px solid #ddd;
+}
+
+.mega-menu .widget__title {
+	margin-bottom: .3em;
+}
+
+.mega-menu a {
+	color: #333;
+}
+
+.mega-menu .widget li {
+	list-style: none;
+	margin-bottom: .5em;
 }

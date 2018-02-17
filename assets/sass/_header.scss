@@ -1,5 +1,7 @@
 .header {
     line-height: 70px;
+    position: relative;
+    z-index: 3;
 
     &__center {
         display: flex;
@@ -23,7 +25,7 @@
     list-style: none;
 }
 
-.menu-item a {
+.menu-item > a {
     display: block;
     padding: 0 14px;
 }

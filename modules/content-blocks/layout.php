@@ -16,8 +16,8 @@
 
 		<?php else: ?>
 
-		<div class="layout-row">
-			<div class="center">
+		<div class="section main layout-row">
+			<div class="section__center">
 				<?php
 				/**
 				 * This is the normal while loop for groups within the row.

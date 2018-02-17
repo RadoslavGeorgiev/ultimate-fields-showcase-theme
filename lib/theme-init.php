@@ -14,6 +14,9 @@ function showcase_options_page() {
 	$page = Options_Page::create( 'theme-options', __( 'Theme Options', 'showcase' ) )
 		->set_type( 'appearance' );
 
+	// Expose to other modules
+	$GLOBALS['showcase_options_page'] = $page;
+
 	Module_Loader::get_instance()->register_options_container( $page );
 }
 
@@ -25,7 +28,7 @@ function showcase_options_page() {
 function showcase_get_default_sidebar_args() {
 	return array(
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'before_title'  => '<h2 class="widget__title">',
+		'before_title'  => '<h2 class="widget__title main-border">',
 		'after_title'   => '</h2>',
 		'after_widget'  => '</div>',
 	);

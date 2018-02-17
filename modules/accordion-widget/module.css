@@ -1,5 +1,38 @@
-.widget-section { background: #fff; }
-.widget-section + .widget-section { border-top: 1px solid #ddd; }
-.widget-section__title { cursor: pointer; padding: 10px; }
-.widget-section__text { display: none; padding: 0 10px 10px; }
-.widget-section--visible .widget-section__text { display: block; }
+.widget-section {
+    background: #fff;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.widget-section + .widget-section {
+    border-top: 1px solid #ddd;
+}
+
+.widget-section__title {
+    cursor: pointer; padding: 10px;
+}
+
+.widget-section__toggle {
+    float: right;
+    padding-right: 5px;
+}
+
+.widget-section__close {
+    display: none;
+}
+
+.widget-section__text {
+    display: none; padding: 0 10px 10px;
+}
+
+.widget-section--visible .widget-section__text {
+    display: block;
+}
+
+.widget-section--visible .widget-section__close {
+    display: block;
+}
+
+.widget-section--visible .widget-section__open {
+    display: none;
+}

@@ -72,4 +72,20 @@ function showcase_builtin_modules( $loader ) {
 		'url'      => get_template_directory_uri() . '/modules/accordion-widget',
 		'redirect' => home_url( 'wp-admin/widgets.php' )
 	));
+
+	$loader->add_module( 'related-posts', array(
+		'title'    => __( 'Related Posts', 'showcase' ),
+		'pro'      => true,
+		'path'     => __DIR__ . '/modules/related-posts',
+		'url'      => get_template_directory_uri() . '/modules/related-posts',
+		'redirect' => admin_url( 'post.php?post=1&action=edit' )
+	));
+
+	$loader->add_module( 'team', array(
+		'title'    => __( 'Team', 'showcase' ),
+		'pro'      => true,
+		'path'     => __DIR__ . '/modules/team',
+		'url'      => get_template_directory_uri() . '/modules/team',
+		'redirect' => admin_url( 'post.php?post=2&action=edit' )
+	));
 }
