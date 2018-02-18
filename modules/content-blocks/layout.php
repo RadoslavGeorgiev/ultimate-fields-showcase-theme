@@ -13,7 +13,7 @@
 			the_group();
 			$url = wp_get_attachment_url( get_sub_value( 'image' ) );
 			?>
-			<div class="full-width-image" style="background-image: url(<?php echo $url ?>)"></div>
+			<div class="section full-width-image" style="background-image: url(<?php echo $url ?>)"></div>
 
 		<?php else: ?>
 

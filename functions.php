@@ -88,4 +88,12 @@ function showcase_builtin_modules( $loader ) {
 		'url'      => get_template_directory_uri() . '/modules/team',
 		'redirect' => admin_url( 'post.php?post=2&action=edit' )
 	));
+
+	$loader->add_module( 'site-layout', array(
+		'title'    => __( 'Site Layout', 'showcase' ),
+		'pro'      => false,
+		'path'     => __DIR__ . '/modules/site-layout',
+		'url'      => get_template_directory_uri() . '/modules/site-layout',
+		'redirect' => admin_url( 'themes.php?page=theme-options' )
+	));
 }

@@ -1,0 +1,10 @@
+body.boxed {
+    background: #ccc;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.boxed .site {
+    max-width: 1200px;
+    margin: 0 auto;
+}

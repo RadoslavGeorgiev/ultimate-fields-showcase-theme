@@ -43,24 +43,23 @@ This table describes what features are used in the theme and where to find them.
 | `Post_Type`      | events, content-builder | Adds meta boxes to pages and events.             |
 | `Shortcode`      | shortcode               | Allows the addition of quotes with extra styles. |
 | __Fields__       |                         |                                                  |
-| Text             | quote                   | Used for the author                              |
+| Text             | quote, accordion-widget | Used for the author, title and etc.              |
 | Map              | events                  | Used to set the location of events.              |
 | Sidebar          | menu                    | Used to select a sidebar for mega-menus.         |
 | Text             | team                    | Used for team member names                       |
-| Checkbox         | -                       | -                                                |
+| Checkbox         | events                  | Checks if the event is physical or not.          |
 | File             | -                       | -                                                |
 | Object           | -                       | -                                                |
-| Tab              | -                       | -                                                |
+| Tab              | site-layout             | Used to toggle between layout and background.    |
 | Date             | events                  | Used to select the beginning and end of events.  |
-| Complex          | -                       | -                                                |
-| Textarea         | -                       | -                                                |
-| Radio            | -                       | -                                                |
-| Image            | -                       | -                                                |
+| Complex          | content-blocks          | Used for displaying buttons.                     |
+| Textarea         | accordion-widget        | -                                                |
+| Image            | site-layout             | -                                                |
 | Objects          | related-posts           | Used to select the related posts.                |
-| Section          | -                       | -                                                |
+| Section          | events                  | Separates the date fields and the location.      |
 | Repeater         | team                    | Used to add departments and teams to the team page. |
-| WYSIWYG          | team                    | Used for the individual team-member bios.        |
-| Select           | -                       | -                                                |
+| WYSIWYG          | content-blocks, team    | Used for the individual team-member bios.        |
+| Select           | site-layout             | -                                                |
 | Audio            | -                       | -                                                |
 | Link             | -                       | -                                                |
 | Message          | -                       | -                                                |
@@ -71,10 +70,10 @@ This table describes what features are used in the theme and where to find them.
 | Font             | -                       | -                                                |
 | Image Select     | -                       | -                                                |
 | Gallery          | -                       | -                                                |
-| Icon             | -                       | -                                                |
-| Video            | -                       | -                                                |
+| Icon             | content-blocks, menu    | Used in the Text content block and for menu icons. |
+| Video            | content-blocks          | Used in the "Video" block.                       |
 | Map              | events                  | -                                                |
-| Embed            | -                       | -                                                |
+| Embed            | content-blocks          | -                                                |
 | Sidebar          | menu                    | -                                                |
 | Number           | -                       | -                                                |
 

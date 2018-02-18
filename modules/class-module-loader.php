@@ -108,7 +108,7 @@ class Module_Loader {
 			}
 
 			if( file_exists( $module['path'] . 'module.css' ) ) {
-				wp_enqueue_style( $id . '-css', $module['url'] . 'module.css' );
+				wp_enqueue_style( $id, $module['url'] . 'module.css' );
 			}
 		}
 	}

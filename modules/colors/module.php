@@ -17,27 +17,28 @@ function showcase_colors_fields() {
 		->add_fields(array(
 			Field::create( 'color', 'main_color', __( 'Main color', 'showcase' ) )
 				->set_default_value( '#006b67' )
+				->set_description( __( 'This color will be used for the header and footer backgrounds, as well as various accents throughout the theme.', 'showcase' ) )
 		));
 }
 
 /**
  * Output custom CSS in the header.
  */
-add_action( 'wp_head', 'showcase_colors_css' );
+add_action( 'wp_enqueue_scripts', 'showcase_colors_css' );
 function showcase_colors_css() {
 	$color = get_value( 'main_color', 'option' );
 
-	?>
-	<style media="screen">
+	$css = "
 	body, .main-background {
-		background-color: <?php echo $color ?>;
+		background-color: $color;
 	}
 
 	.main-border {
-		border-color: <?php echo $color ?>;
+		border-color: $color;
 	}
-	</style>
-	<?php
+	";
+
+	wp_add_inline_style( 'showcase', $css );
 }
 
 /**

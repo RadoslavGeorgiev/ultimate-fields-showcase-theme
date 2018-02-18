@@ -21,6 +21,13 @@ function showcase_blocks_remove_editor() {
  */
 add_action( 'uf.init', 'showcase_blocks_field' );
 function showcase_blocks_field() {
+	// Create a reusable "Button" set of fields.
+	Container::create( 'button' )
+		->add_fields(array(
+			Field::create( 'text', 'text', __( 'Text', 'showcase' ) ),
+			Field::create( 'link', 'link', __( 'Link', 'showcase' ) ),
+		));
+
 	$blocks_field = Field::create( 'layout', 'page_content', __( 'Content Blocks', 'showcase' ) );
 
 	// Text Blocks
@@ -29,6 +36,7 @@ function showcase_blocks_field() {
 		'min_width' => 3,
 		'icon'      => 'dashicons-format-image',
 		'max'       => 2,
+		'layout'    => 'rows',
 		'fields'    => array(
 			Field::create( 'icon', 'icon', __( 'Icon', 'showcase' ) )
 				->add_set( 'font-awesome' )
@@ -38,7 +46,9 @@ function showcase_blocks_field() {
 				->set_field_width( 65 )
 				->required(),
 			Field::create( 'wysiwyg', 'text', __( 'Text', 'showcase' )  )
-				->apply_the_content()
+				->apply_the_content(),
+			Field::create( 'complex', 'button', __( 'Button', 'showcase' ) )
+				->load_from_container( 'button' )
 		)
 	));
 
@@ -63,6 +73,16 @@ function showcase_blocks_field() {
 		'icon'      => 'dashicons-format-video',
 		'fields'    => array(
 			Field::create( 'video', 'video', __( 'Video', 'showcase' ) )
+		)
+	));
+
+	// Embed blocks
+	$blocks_field->add_group( 'embed', array(
+		'title'     => __( 'Embed', 'showcase' ),
+		'min_width' => 6,
+		'icon'      => 'dashicons-editor-code',
+		'fields'    => array(
+			Field::create( 'embed', 'embed', __( 'Embed', 'showcase' ) )
 		)
 	));
 
