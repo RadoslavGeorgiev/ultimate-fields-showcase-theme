@@ -9,15 +9,16 @@
 		 */
 		if( 'image' == get_group_type() && 12 == get_group_width() && get_sub_value( 'full_width' ) ): ?>
 
-			<div class="full-width-image">
-				<?php the_group() ?>
-				<?php the_sub_value( 'image' ) ?>
-			</div>
+			<?php
+			the_group();
+			$url = wp_get_attachment_url( get_sub_value( 'image' ) );
+			?>
+			<div class="full-width-image" style="background-image: url(<?php echo $url ?>)"></div>
 
 		<?php else: ?>
 
-		<div class="section main layout-row">
-			<div class="section__center">
+		<div class="section main layout__row">
+			<div class="section__center layout__center">
 				<?php
 				/**
 				 * This is the normal while loop for groups within the row.
@@ -30,7 +31,7 @@
 				 * @see get_group_width()
 				 */
 				while( have_groups( 'page_content' ) ): the_group() ?>
-					<div class="layout-column layout-column-<?php echo get_group_width() ?>">
+					<div class="layout__column" style="flex: <?php echo get_group_width() ?>">
 						<?php include __DIR__ . '/block-' . get_group_type() . '.php' ?>
 					</div>
 				<?php endwhile ?>

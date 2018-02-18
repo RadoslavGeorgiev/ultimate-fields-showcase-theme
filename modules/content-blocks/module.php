@@ -8,6 +8,12 @@ use UF3\Field;
 add_action( 'init', 'showcase_blocks_remove_editor' );
 function showcase_blocks_remove_editor() {
 	remove_post_type_support( 'page', 'editor' );
+
+	for( $i=3; $i<=12; $i++ ) {
+		$width = ( ( 1040 / 12 ) * $i ) - 40;
+		$width = round( $width );
+		add_image_size( 'block-' . $i, $width );
+	}
 }
 
 /**

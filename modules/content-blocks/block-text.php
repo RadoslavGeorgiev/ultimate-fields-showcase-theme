@@ -1,6 +1,6 @@
 <div class="rte text-block">
 	<?php if( get_sub_value( 'icon' ) ): ?>
-	<div class="round-icon">
+	<div class="main-background round-icon">
 		<span class="fa <?php the_sub_value( 'icon' ) ?>"></span>
 	</div>
 	<?php endif ?>

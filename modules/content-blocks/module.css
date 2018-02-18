@@ -1,5 +1,40 @@
-.full-width-image {  }
-.full-width-image img { display: block; width: 100%; height: auto; }
+.layout {
+    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
+}
 
-.image-block { }
-.image-block img { width: 100%; height: auto; }
+.layout__center {
+    display: flex;
+    max-width: 1040px;
+}
+
+.layout__column {
+    flex-grow: 1;
+    padding: 25px 20px;
+}
+
+.round-icon {
+    display: block;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 36px;
+    line-height: 70px;
+    color: #fff;
+}
+
+.full-width-image {
+    height: 60vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
