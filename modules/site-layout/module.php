@@ -15,8 +15,7 @@ use UF3\Field;
 add_action( 'uf.init', 'showcase_site_layout_fields' );
 function showcase_site_layout_fields() {
     Container::create( 'site-layout' )
-        ->add_location( 'options', $GLOBALS['showcase_options_page'], [
-            'show_in_customizer' => true,
+        ->add_location( 'customizer', [
             'postmessage_fields' => [ 'site_layout', 'site_background' ]
         ])
         ->add_fields(array(

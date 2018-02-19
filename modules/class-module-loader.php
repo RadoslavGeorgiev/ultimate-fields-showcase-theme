@@ -122,9 +122,21 @@ class Module_Loader {
 	 */
 	public function register_options_container( $page ) {
 		$modules = array();
+		$active  = get_option( 'showcase_modules' );
 
 		foreach( $this->modules as $id => $data ) {
-			$modules[ $id ] = $data['title'];
+			$title = $data['title'];
+
+			if( isset( $data['redirect'] ) && in_array( $id, $active ) ) {
+				$title .= sprintf(
+					' [<a href="%s">View</a>]',
+					is_callable( $data['redirect'] )
+						? call_user_func( $data['redirect'] )
+						: $data['redirect']
+				);
+			}
+
+			$modules[ $id ] = $title;
 		}
 
 		Container::create( 'Showcase Modules' )

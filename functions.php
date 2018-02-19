@@ -96,4 +96,12 @@ function showcase_builtin_modules( $loader ) {
 		'url'      => get_template_directory_uri() . '/modules/site-layout',
 		'redirect' => admin_url( 'themes.php?page=theme-options' )
 	));
+
+	$loader->add_module( 'enhanced-categories', array(
+		'title'    => __( 'Enhanced categories', 'showcase' ),
+		'pro'      => true,
+		'path'     => __DIR__ . '/modules/enhanced-categories',
+		'url'      => get_template_directory_uri() . '/modules/enhanced-categories',
+		'redirect' => admin_url( 'term.php?taxonomy=category&tag_ID=1' )
+	));
 }

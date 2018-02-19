@@ -39,8 +39,15 @@ This table describes what features are used in the theme and where to find them.
 | Feature          | Module                  | Hint                                             |
 |------------------|-------------------------|--------------------------------------------------|
 | __Locations__    |                         |                                                  |
-| `Options_Page`   | core                    | Used for theme options                           |
-| `Post_Type`      | events, content-builder | Adds meta boxes to pages and events.             |
+| `Options_Page`   | Core                    | Used for theme options                           |
+| `Post_Type`      | events, content-blocks  | Adds meta boxes to pages and events.             |
+| `Taxonomy`       |                         |                                                  |
+| `Comment`        |                         |                                                  |
+| `User`           |                         |                                                  |
+| `Widget`         | accordion               | Handles the widget.                              |
+| `Menu Item`      | menu                    | Displays additional fields in menu items.        |
+| `Attachment`     |                         |                                                  |
+| `Customizer`     | site-layout             | Shows a new section in the Customizer.           |
 | `Shortcode`      | shortcode               | Allows the addition of quotes with extra styles. |
 | __Fields__       |                         |                                                  |
 | Text             | quote, accordion-widget | Used for the author, title and etc.              |
