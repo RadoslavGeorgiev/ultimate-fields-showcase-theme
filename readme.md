@@ -41,9 +41,9 @@ This table describes what features are used in the theme and where to find them.
 | __Locations__    |                         |                                                  |
 | `Options_Page`   | Core                    | Used for theme options                           |
 | `Post_Type`      | events, content-blocks  | Adds meta boxes to pages and events.             |
-| `Taxonomy`       |                         |                                                  |
+| `Taxonomy`       | enhanced-categories     |                                                  |
 | `Comment`        |                         |                                                  |
-| `User`           |                         |                                                  |
+| `User`           | photographers           |                                                  |
 | `Widget`         | accordion               | Handles the widget.                              |
 | `Menu Item`      | menu                    | Displays additional fields in menu items.        |
 | `Attachment`     |                         |                                                  |
@@ -73,7 +73,7 @@ This table describes what features are used in the theme and where to find them.
 | Layout           | content-blocks          | Works as the base of the blocks field.           |
 | Password         | -                       | -                                                |
 | Multiselect      | -                       | -                                                |
-| Color            | colors                  | -                                                |
+| Color            | colors, enhanced-categories | -                                                |
 | Font             | -                       | -                                                |
 | Image Select     | -                       | -                                                |
 | Gallery          | -                       | -                                                |
@@ -82,7 +82,7 @@ This table describes what features are used in the theme and where to find them.
 | Map              | events                  | -                                                |
 | Embed            | content-blocks          | -                                                |
 | Sidebar          | menu                    | -                                                |
-| Number           | -                       | -                                                |
+| Number           | enhanced-categories     | Controls the amount of posts per page on the listing. |
 
 
 

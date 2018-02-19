@@ -24,7 +24,7 @@ function showcase_register_events() {
 
 add_filter( 'showcase.content', 'showcase_events_index' );
 function showcase_events_index( $show ) {
-	if( is_archive( 'event' ) ) {
+	if( is_post_type_archive( 'event' ) ) {
 		include __DIR__ . '/archive.php';
 		return true;
 	}

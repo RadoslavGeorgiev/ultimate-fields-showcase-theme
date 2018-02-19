@@ -104,4 +104,12 @@ function showcase_builtin_modules( $loader ) {
 		'url'      => get_template_directory_uri() . '/modules/enhanced-categories',
 		'redirect' => admin_url( 'term.php?taxonomy=category&tag_ID=1' )
 	));
+
+	$loader->add_module( 'photographers', array(
+		'title'    => __( 'Photographers', 'showcase' ),
+		'pro'      => true,
+		'path'     => __DIR__ . '/modules/photographers',
+		'url'      => get_template_directory_uri() . '/modules/photographers',
+		'redirect' => admin_url( 'media.php' )
+	));
 }
