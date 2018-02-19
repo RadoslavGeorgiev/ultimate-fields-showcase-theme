@@ -41,7 +41,7 @@
 
     &__main {
         width: $shell - $sidebar-width;
-        padding: 0 20px 20px 0;
+        padding: 20px 20px 20px 0;
     }
 
     &__sidebar {
@@ -68,8 +68,12 @@
     }
 }
 
+.single .rte {
+	margin-top: 1em;
+}
+
 .loop {
-    padding: 20px 0;
+    padding: 0 0 20px;
 
     &__post {
 

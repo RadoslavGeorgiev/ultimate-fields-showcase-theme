@@ -86,6 +86,15 @@ function showcase_blocks_field() {
 		)
 	));
 
+	// Gallery block
+	$blocks_field->add_group( 'gallery', array(
+		'title'     => __( 'Gallery', 'showcase' ),
+		'icon'      => 'dashicons-format-gallery',
+		'fields'    => array(
+			Field::create( 'gallery', 'gallery', __( 'Gallery', 'showcase' ) )
+		)
+	));
+
 	Container::create( __( 'Page Content', 'showcase' ) )
 		->add_location( 'post_type', 'page' )
 		->add_fields(array(

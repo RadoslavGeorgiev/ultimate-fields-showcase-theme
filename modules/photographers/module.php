@@ -19,5 +19,27 @@ function showcase_photographer_fields() {
 }
 
 /**
- * Display on the right place/page
+ * Display credits after the featured image.
  */
+add_action( 'showcase.after_thumbnail', 'showcase_photographer_credits' );
+function showcase_photographer_credits() {
+	$image_id     = get_post_thumbnail_id();
+	$photographer = get_value( 'photographer', $image_id );
+
+	if( ! $photographer ) {
+		return;
+	}
+
+	$name = esc_html( $photographer->data->display_name );
+
+	// Check for a link
+	if( $link = get_value( 'copyrights_link', 'user_' . $photographer->ID ) ) {
+		$name = sprintf(
+			'<a href="%s">%s</a>',
+			esc_url( $link['link'] ),
+			$name
+		);
+	}
+
+	echo "<p class='credits'>Photo credits: $name</p>";
+}

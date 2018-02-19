@@ -4,6 +4,7 @@ use UF3\Options_Page;
 // Register theme supports
 add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' );
+add_image_size( 'post-thumbnail', 680 );
 register_nav_menu( 'main-menu', __( 'Main Menu', 'showcase' ) );
 
 /**

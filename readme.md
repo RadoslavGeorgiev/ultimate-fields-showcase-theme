@@ -43,10 +43,10 @@ This table describes what features are used in the theme and where to find them.
 | `Post_Type`      | events, content-blocks  | Adds meta boxes to pages and events.             |
 | `Taxonomy`       | enhanced-categories     |                                                  |
 | `Comment`        |                         |                                                  |
-| `User`           | photographers           |                                                  |
+| `User`           | photographers           | Displays the copyrights link field for every user. |
 | `Widget`         | accordion               | Handles the widget.                              |
 | `Menu Item`      | menu                    | Displays additional fields in menu items.        |
-| `Attachment`     |                         |                                                  |
+| `Attachment`     | photographers           | Handles the photographer field for images.       |
 | `Customizer`     | site-layout             | Shows a new section in the Customizer.           |
 | `Shortcode`      | shortcode               | Allows the addition of quotes with extra styles. |
 | __Fields__       |                         |                                                  |
@@ -55,7 +55,7 @@ This table describes what features are used in the theme and where to find them.
 | Sidebar          | menu                    | Used to select a sidebar for mega-menus.         |
 | Text             | team                    | Used for team member names                       |
 | Checkbox         | events                  | Checks if the event is physical or not.          |
-| File             | -                       | -                                                |
+| File             | downloads               | Allows a downloadable file to be assigned to posts. |
 | Object           | -                       | -                                                |
 | Tab              | site-layout             | Used to toggle between layout and background.    |
 | Date             | events                  | Used to select the beginning and end of events.  |
@@ -68,15 +68,15 @@ This table describes what features are used in the theme and where to find them.
 | WYSIWYG          | content-blocks, team    | Used for the individual team-member bios.        |
 | Select           | site-layout             | -                                                |
 | Audio            | -                       | -                                                |
-| Link             | -                       | -                                                |
+| Link             | photographers           | Allows the entry of copyright links for users.   |
 | Message          | -                       | -                                                |
 | Layout           | content-blocks          | Works as the base of the blocks field.           |
 | Password         | -                       | -                                                |
 | Multiselect      | -                       | -                                                |
 | Color            | colors, enhanced-categories | -                                                |
-| Font             | -                       | -                                                |
+| Font             | fonts                   | -                                                |
 | Image Select     | -                       | -                                                |
-| Gallery          | -                       | -                                                |
+| Gallery          | content-blocks          | Handles the "Gallery" block.                     |
 | Icon             | content-blocks, menu    | Used in the Text content block and for menu icons. |
 | Video            | content-blocks          | Used in the "Video" block.                       |
 | Map              | events                  | -                                                |
