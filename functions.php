@@ -128,4 +128,12 @@ function showcase_builtin_modules( $loader ) {
 		'url'      => get_template_directory_uri() . '/modules/downloads',
 		'redirect' => admin_url( 'post.php?post=1&action=edit' )
 	));
+
+	$loader->add_module( 'comment-tags', array(
+		'title'    => __( 'Comment Tags', 'showcase' ),
+		'pro'      => true,
+		'path'     => __DIR__ . '/modules/comment-tags',
+		'url'      => get_template_directory_uri() . '/modules/comment-tags',
+		'redirect' => admin_url( 'comment.php?action=editcomment&c=1' )
+	));
 }

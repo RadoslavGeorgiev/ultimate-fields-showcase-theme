@@ -72,7 +72,7 @@ This table describes what features are used in the theme and where to find them.
 | Message          | -                       | -                                                |
 | Layout           | content-blocks          | Works as the base of the blocks field.           |
 | Password         | -                       | -                                                |
-| Multiselect      | -                       | -                                                |
+| Multiselect      | comment-tags            | Allows the selection of related tags for the comment. |
 | Color            | colors, enhanced-categories | -                                                |
 | Font             | fonts                   | -                                                |
 | Image Select     | -                       | -                                                |
