@@ -3,8 +3,8 @@
   "version": "2.0.0",
   "description": "A WordPress theme, which showcases all features of Ultimate Fields.",
   "scripts": {
-      "build": "gulp",
-      "watch": "gulp watch"
+    "build": "gulp",
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/RadoslavGeorgiev/ultimate-fields-showcase-theme#readme",
   "dependencies": {
     "gulp": "^3.9.1",
+    "gulp-notify": "^3.2.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.4"
   }
