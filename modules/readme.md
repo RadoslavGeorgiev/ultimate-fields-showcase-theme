@@ -1,5 +1,14 @@
-### Items
-This table describes what features are used in the theme and where to find them. Respectively, there is a reverse, module-based list below.
+# Modules
+
+Examples of the creation and usage of various features of Ultimate Fields within the  __Ultimate Fields: Showcase Theme__ are combined in purpose-built modules.
+
+Modules are activated from the "Theme Options" page, located in Appearance > Theme Options when the theme is active. In the table below you can find which modules are using a specific location or a specific field type.
+
+Each module is contained in a separate directory within this folder and contains a special `readme.md` file, which describes the purpose of the module, what features are used and how they are used.
+
+## Features
+
+This table describes in which module to find certain features of Ultimate Fields. If you are interested in the features, used in an individual module, please check its directory.
 
 | Feature                                                                      | Module                                                           | Hint                                                        |
 |------------------------------------------------------------------------------|------------------------------------------------------------------|-------------------------------------------------------------|
@@ -49,11 +58,12 @@ This table describes what features are used in the theme and where to find them.
 | [Video](https://www.ultimate-fields.com/docs/fields/video/)                  | [`content-blocks`](content-blocks)                               | Used in the "Video" block.                                  |
 | [WYSIWYG](https://www.ultimate-fields.com/docs/fields/wysiwyg/)              | [`content-blocks`](content-blocks), [`team`](team)               | Used for the individual team-member bios.                   |
 
-### Modules
-Modules group different examples together and use the hooks in the base to display and add their content. Each module has a readme in its own directory, which describes what features are used and what is being done there.
+## Module structure
 
-- [`content-blocks`](modules/content-blocks): Replaces the content editor of pages with a layout field.
-- [`events`](modules/events/): Creates a new post type for events, featuring dates, maps and the `Post_Type` location.
-- [`menu`](modules/menu/): Showcases the usage of the `Menu_Item` location with custom sidebars and icons.
-- [`quote`](modules/quote/): Showcases the usege of the `Shortcode` location to add a shortcode for a quote.
-- [`related-posts`](modules/related-posts/): Adds fields for other related posts to post edit screens.
+The directory of each module has the following structure:
+
+- File A
+
+## Creating a module
+
+Creating new module requires the following steps to be performed:
