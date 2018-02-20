@@ -3,6 +3,13 @@ use UF3\Container;
 use UF3\Field;
 
 /**
+ * Module name: Colors
+ *
+ * @package Ultimate Fields: Showcase Theme
+ * @see readme.md for details
+ */
+
+/**
  * Register color fields for the customizer, which allow us to change the general site colors,
  * as well as the individual color for every page.
  */
