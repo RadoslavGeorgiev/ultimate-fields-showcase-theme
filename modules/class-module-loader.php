@@ -124,6 +124,10 @@ class Module_Loader {
 		$modules = array();
 		$active  = get_option( 'showcase_modules' );
 
+		if( ! $active ) {
+			$active = array();
+		}
+
 		foreach( $this->modules as $id => $data ) {
 			$title = $data['title'];
 

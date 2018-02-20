@@ -95,6 +95,25 @@ function showcase_blocks_field() {
 		)
 	));
 
+	// Audio block
+	$blocks_field->add_group( 'audio', array(
+		'title'     => __( 'Audio Player', 'showcase' ),
+		'icon'      => 'dashicons-format-audio',
+		'fields'    => array(
+			Field::create( 'audio', 'audio', __( 'Audio Player', 'showcase' ) )
+		)
+	));
+
+	// Teaser block
+	$blocks_field->add_group( 'teaser', array(
+		'title'     => __( 'Teaser Link', 'showcase' ),
+		'icon'      => 'dashicons-admin-links',
+		'fields'    => array(
+			Field::create( 'object', 'object', __( 'Object', 'showcase' ) )
+				->add( 'posts' )
+		)
+	));
+
 	Container::create( __( 'Page Content', 'showcase' ) )
 		->add_location( 'post_type', 'page' )
 		->add_fields(array(

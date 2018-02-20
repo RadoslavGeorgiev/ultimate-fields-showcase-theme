@@ -1,6 +1,32 @@
-UF3.customize.bind( 'main_color', function( value, context ) {
+(function() {
 
-	$( 'body, .main-background' ).css( 'backgroundColor', value );
-	$( '.main-border' ).css( 'borderColor', value );
+	var state = $.extend( {}, showcase_colors );
 
-});
+	function applyColor( color ) {
+		$( 'body, .main-background' ).css( 'backgroundColor', color );
+		$( '.main-border' ).css( 'borderColor', color );
+	}
+
+	function updateState() {
+		switch( state.color_type ) {
+			case 'predefined':
+				applyColor( state.predefined_color );
+				break;
+
+			case 'custom':
+				applyColor( state.main_color );
+				break;
+
+			default:
+				applyColor( '#0074a2' );
+		}
+	}
+
+	$.each( [ 'color_type', 'predefined_color', 'main_color' ], function( i, property ) {
+		UF3.customize.bind( property, function( value ) {
+			state[ property ] = value;
+			updateState();
+		});
+	});
+
+})();
