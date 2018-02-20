@@ -60,10 +60,87 @@ This table describes in which module to find certain features of Ultimate Fields
 
 ## Module structure
 
-The directory of each module has the following structure:
+Although each module should be isolated in its own directory, there are no specifications for the structure inside.
 
-- File A
+The following files will be auto-loaded by the theme when the module is activated:
+
+- `module.php` is the root file of the module and will automatically be included during the `after_setup_theme` action.
+- `module.css` will be automatically enqueued in the front-end.
+- `module.js` will also automatically be enqueued in the front-end.
+
+A `readme.md` markdown file is not required, but one is included with all built-in modules. It describes the purpose of the module and the techniques used inside.
 
 ## Creating a module
 
-Creating new module requires the following steps to be performed:
+__Ultimate Fields: Showcase Theme__ is not meant to be redistributed and built upon for normal websites, however if you are developing an extension for Ultimate Fields, it would be very suitable to create an additional module.
+
+Let's assume that you are creating a module, called `my-module`. It would require the following structure:
+
+- `my-module`: The directory, which would work as a plugin.
+  - `my-module.php`: A file, which defines the module and the plugin
+  - `module.php`: The file, which will be included when the module is active.
+  - `module.css`: An optional, pluggable CSS file.
+  - `module.js`: An optional, pluggable JavaScript file.
+
+Here is how the content of `my-module.php` should look like:
+
+```php
+<?php
+/**
+ * Plugin name: Ultimate Fields Showcase: <module-name>
+ *
+ * ... additional plugin headers as defined at
+ * @see https://developer.wordpress.org/plugins/the-basics/header-requirements/
+ */
+
+ /**
+  * Loads the module in the module loader.
+  *
+  * @param Module_Loader $loader A loader that includes modules.
+  */
+ add_action( 'showcase.load_modules', 'showcase_add_my_module' );
+ function showcase_add_my_module( $loader ) {
+ 	$loader->add_module( 'my-module', array(
+		/**
+		 * The title of the module.
+		 *
+		 * @var string
+		 */
+ 		'title' => __( 'My Module' ),
+
+		/**
+		 * An indicator whether the module requires Ultimate Fields Pro.
+		 *
+		 * If the module does not require any additional extensions, you can provide a boolean variable.
+		 * If the module requires an extension though, you can provide a callback here,
+		 * which would determine if the module should be active or not.
+		 *
+		 * @var bool|callable
+		 */
+ 		'pro'   => false,
+
+		/**
+		 * The path of the `module.php` file. In this example the file is in
+		 * the root of the plugin, therefore we are using the current directory.
+		 *
+		 * @var string
+		 */
+ 		'path'  => __DIR__,
+
+		/**
+		 * A URL for scripts and styles.
+		 *
+		 * @var string
+		 */
+ 		'url'   => plugins_url( '', __FILE__ ),
+
+		/**
+		 * (Optional) A URL, where users should be redirected
+		 * before interacting with the module.
+		 *
+		 * @var string
+		 */
+ 		'redirect' => admin_url( 'post.php?post=1&action=edit' )
+ 	));
+}
+```
