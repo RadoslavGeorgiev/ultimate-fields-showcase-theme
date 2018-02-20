@@ -6,6 +6,7 @@
 		$( 'body, .main-background' ).css( 'backgroundColor', color );
 		$( '.main-border' ).css( 'borderColor', color );
 		$( '.rte a' ).css( 'color', color );
+		$( '.menu-triangle' ).css( 'border-bottom-color', color );
 	}
 
 	function updateState() {

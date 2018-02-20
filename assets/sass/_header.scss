@@ -2,6 +2,7 @@
     line-height: 70px;
     position: relative;
     z-index: 3;
+    background: rgba(0,0,0,.4);
 
     &__center {
         display: flex;
@@ -28,9 +29,25 @@
 .menu-item > a {
     display: block;
     padding: 0 14px;
+    height: 70px;
+    line-height: 68px;
+}
+
+.menu-triangle {
+    border-color: transparent transparent $main-color transparent;
 }
 
 .current-menu-item > a {
-    background: #fff;
-    color: #333;
+    position: relative;
+
+    > .menu-triangle {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -10px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 12px 10px;
+    }
 }

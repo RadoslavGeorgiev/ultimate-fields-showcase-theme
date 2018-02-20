@@ -108,6 +108,10 @@ function showcase_colors_css() {
 	.rte a {
 		color: $color;
 	}
+
+	.menu-triangle {
+		border-bottom-color: $color;
+	}
 	";
 
 	wp_add_inline_style( 'showcase', $css );

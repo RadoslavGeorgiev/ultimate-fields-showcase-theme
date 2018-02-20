@@ -1,5 +1,3 @@
-[« Back to the root](../..)
-
 # Ultimate Fields Showcase: Accordion Widget
 
 This module adds a new widget, which uses a Repeater field to allow users to add sections to an accordion.

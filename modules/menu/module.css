@@ -20,6 +20,10 @@
 	color: #333;
 }
 
+.has-mega-menu:hover > a:after {
+	display: none;
+}
+
 .has-mega-menu:hover .mega-menu {
 	display: block;
 }

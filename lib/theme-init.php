@@ -54,6 +54,6 @@ function showcase_sidebars() {
 add_action( 'wp_enqueue_scripts', 'showcase_scripts_styles' );
 function showcase_scripts_styles() {
 	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
-	wp_enqueue_style( 'source-sans-font', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' );
+	wp_enqueue_style( 'open-sans-font', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700' );
 	wp_enqueue_style( 'showcase', get_stylesheet_uri() );
 }
