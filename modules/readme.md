@@ -5,15 +5,15 @@ This table describes what features are used in the theme and where to find them.
 |------------------|-------------------------|--------------------------------------------------|
 | __Locations__    |                         |                                                  |
 | `Options_Page`   | Core                    | Used for theme options                           |
-| `Post_Type`      | events, content-blocks  | Adds meta boxes to pages and events.             |
-| `Taxonomy`       | enhanced-categories     | Displays the fields when adding and creating categories. |
-| `Comment`        | comment-tags            | Renders the field when editing a comment.        |
-| `User`           | photographers           | Displays the copyrights link field for every user. |
-| `Widget`         | accordion               | Handles the widget.                              |
-| `Menu Item`      | menu                    | Displays additional fields in menu items.        |
-| `Attachment`     | photographers           | Handles the photographer field for images.       |
-| `Customizer`     | site-layout             | Shows a new section in the Customizer.           |
-| `Shortcode`      | shortcode               | Allows the addition of quotes with extra styles. |
+| `Post_Type`      | [`events`](events), [`content-blocks`](content-blocks)  | Adds meta boxes to pages and events.             |
+| `Taxonomy`       | [`enhanced-categories`](enhanced-categories)     | Displays the fields when adding and creating categories. |
+| `Comment`        | [`comment-tags`](comment-tags)            | Renders the field when editing a comment.        |
+| `User`           | [`photographers`](photographers)           | Displays the copyrights link field for every user. |
+| `Widget`         | [`accordion`](accordion)               | Handles the widget.                              |
+| `Menu Item`      | [`menu`](menu)                    | Displays additional fields in menu items.        |
+| `Attachment`     | [`photographers`](photographers)           | Handles the photographer field for images.       |
+| `Customizer`     | [`site-layout`](site-layout)             | Shows a new section in the Customizer.           |
+| `Shortcode`      | [`shortcode`](shortcode)               | Allows the addition of quotes with extra styles. |
 | __Fields__       |                         |                                                  |
 | Text             | quote, accordion-widget | Used for the author, title and etc.              |
 | Map              | events                  | Used to set the location of events.              |
