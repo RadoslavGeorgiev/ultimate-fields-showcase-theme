@@ -97,6 +97,10 @@ function showcase_colors_css() {
 	.main-border {
 		border-color: $color;
 	}
+
+	.rte a {
+		color: $color;
+	}
 	";
 
 	wp_add_inline_style( 'showcase', $css );

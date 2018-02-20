@@ -5,6 +5,7 @@
 	function applyColor( color ) {
 		$( 'body, .main-background' ).css( 'backgroundColor', color );
 		$( '.main-border' ).css( 'borderColor', color );
+		$( '.rte a' ).css( 'color', color );
 	}
 
 	function updateState() {
