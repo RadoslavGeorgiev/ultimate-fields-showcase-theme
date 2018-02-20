@@ -1,35 +1,29 @@
 # Ultimate Fields Showcase Theme
 
-This theme contains an example of every location and every field of the Ultimate Fields plugin and how to work with them. The theme is not meant to be used neither as a starter theme, nor as a framework. It is rather made to showcase all of the functionality of Ultimate Fields and educate developers on how to use it.
+This theme contains an example of every location and every field that [Ultimate Fields](https://www.ultimate-fields.com/) supports and how to work with them. The theme is not meant to be used as a starter theme, a parent theme or as a framework. It is rather made to showcase all of the functionality of Ultimate Fields and educate developers on how to use it.
 
-If you are not familiar with Ultimate Fields or don't know what it is, please visit our website at https://www.ultimate-fields.com.
+If you are not familiar with Ultimate Fields or don't know what it is, please visit our website at [https://www.ultimate-fields.com](https://www.ultimate-fields.com).
 
-You can:
-1. Check the demo at https://www.ultimate-fields.com/demo/ to experience Ultimate Fields and get a feel for the functionality of the plugin.
-2. Clone the theme within your sandbox and play with it in order to understand some of the core concepts of Ultimate Fields, including the registration of fields and containers through code.
-3. If you are working on an extension for Ultimate Fields, create a new module that shows how to interact with it.
+At [https://www.ultimate-fields.com/demo/](https://www.ultimate-fields.com/demo/) you can create a personalised demo website of Ultimate Fields, where you see theme in action. Of course, you can also copy the theme to your local development environment in order to experiment with it.
+
+If you are working on an extension for Ultimate Fields, feel free to [create a new module](https://github.com/RadoslavGeorgiev/ultimate-fields-showcase-theme/tree/master/modules#creating-a-module) that shows how to interact with your extension.
 
 ## Installation
-You can clone the theme from GitHub and configure it locally if you have `git` and `npm` installed. If not, you can download and compile it manually.
 
-In both scenarios, please keep in mind that the theme requires __Ultimate Fields Pro__ to be installed and activated. If you use the free version of Ultimate Fields, some of the functionality of the theme will be limited.
+Before installing the showcase theme locally, please ensure that:
 
-### Command line:
+- Your machine has Git (the `git` command) and Node Package Manager (the `npm` command) installed.
+- You own a copy of [Ultimate Fields Pro](https://www.ultimate-fields.com/pro). If you use the free version of Ultimate Fields, some of the functionality of the theme will be limited.
+
 Navigate to your wp-content/themes directory and execute the following commands:
+
 ```shell
 git clone git@github.com:RadoslavGeorgiev/uf3-showcase-theme.git
 cd uf3-showcase-theme
 npm install
 npm run build
 ```
-
 This will download the theme and compile its styles. All you have to do is activate the theme.
-
-### Manual
-
-1. Download this repository into your `wp-content/themes` directory.
-2. Compile the SCSS file `assets/sass/style.scss` to `style.css` in the root of the theme.
-3. Activate the theme
 
 ## Examples
 
