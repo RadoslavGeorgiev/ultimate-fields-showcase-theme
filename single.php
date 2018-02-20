@@ -31,7 +31,7 @@
 		</div>
 
 		<div class="page-content__sidebar">
-			<?php dynamic_sidebar( 'default-sidebar' ) ?>
+			<?php dynamic_sidebar( 'sidebar-1' ) ?>
 		</div>
 	</div>
 </div>
