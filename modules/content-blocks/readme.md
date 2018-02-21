@@ -113,22 +113,55 @@ If a page is being displayed, we simply include the `layout.php` file and return
 
 ```php
 <?php while( have_layout_rows( 'page_content' ) ): the_layout_row() ?>
-	<?php if( 'image' == get_group_type() && 12 == get_group_width() && get_sub_value( 'full_width' ) ): ?>
-		<?php the_group() ?>
-		<!-- Image block content -->
-	<?php else: ?>
-	<div class="row">
-		<?php while( have_groups( 'page_content' ) ): the_group() ?>
-			<div class="layout__column" style="flex: <?php echo get_group_width() ?>">
-				<?php include __DIR__ . '/block-' . get_group_type() . '.php' ?>
-			</div>
-		<?php endwhile ?>
-	</div>
-	<?php endif ?>
+  <?php if( 'image' == get_group_type() && 12 == get_group_width() && get_sub_value( 'full_width' ) ): ?>
+    <?php the_group() ?>
+    <!-- Image block content -->
+  <?php else: ?>
+  <div class="row">
+    <?php while( have_groups( 'page_content' ) ): the_group() ?>
+      <div class="layout__column" style="flex: <?php echo get_group_width() ?>">
+        <?php include __DIR__ . '/block-' . get_group_type() . '.php' ?>
+      </div>
+    <?php endwhile ?>
+  </div>
+  <?php endif ?>
 <?php endwhile ?>
 ```
 
+As described in the [Usage section in the docs](https://www.ultimate-fields.com/docs/fields/layout/#usage), we are using the `have_layout_rows`, `the_layout_row`, `have_groups`, `the_group`, `get_group_width` and `*_sub_value` functions. All of them are described in the docs, we will not focus on them.
+
+Instead, let's focus on this conditional:
+
+```php
+<?php if( 'image' == get_group_type() && 12 == get_group_width() && get_sub_value( 'full_width' ) ): ?>
+	<?php the_group() ?>
+	<!-- Image block content -->
+<?php else: ?>
+	<?php while( have_groups( 'page_content' ) ): the_group() ?>
+		<!-- Standard content -->
+	<?php endwhile ?>
+<?php endif ?>
+```
+
+What we are doing here is quite specific and there are a few things to note:
+
+1. Once within the rows loop, we already have access to the first group of the current row. Because of this, we can call `get_group_type()`, `get_group_width()` and `get_sub_value()` even before calling `the_group()`. This allows us to make decisions for the whole row based on the first block inside of it. Doing so is particularly useful if we'd like to handle full-width groups differently.
+2. Within the image block, there is a checkbox called `full_width`, which is only shown when the `__width` property of the group is set to 12, a.k.a. full width. In combination with it, we can do the following checks to make sure that we'd like to display a full-width element:
+  1. The current block type is `image`. This is the only block type, which supports full width in this case.
+  2. The block takes up the full 12 columns available. Otherwise the value of the `full_width` field is meaningless.
+  3. `full_width` is actually checked.
+3. If a full-width block is not displayed, the standard `have_groups()` - `the_group()` loop is entered.
+
+For all normal blocks there is a `block-{type}.php` file, which uses `get_sub_value` and `the_sub_value` normally.
 
 ## Blocks
 
-Here is an individual definition of all bocks.
+Below you will find a list of all individual modules. Please check their definitions in `module.php` and the individual `block-{type}.php` template in order to see how they work.
+
+- Text Block (`text`) is bla
+- Image (`image`) displays a simple image. In case the block is using the full amount of columns, an additional full-screen checkbox is displayed.
+- Video (`video`) displays an HTML5 video tag.
+- Embed (`embed`) loads an embed based on the Embed field and displays it.
+- Gallery (`gallery`) allows multiple images to be selected and displays them through the `gallery` shortcode.
+- Audio Player (`audio`) displays an HTML5 audio tag based on the audio field.
+- Teaser Link (`teaser`) uses an Object field in order to select a post, whose teaser is to be displayed and displays the teaser.
