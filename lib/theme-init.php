@@ -41,7 +41,7 @@ function showcase_get_default_sidebar_args() {
 add_action( 'widgets_init', 'showcase_sidebars' );
 function showcase_sidebars() {
 	$args = wp_parse_args( array(
-		'id'   => 'default-sidebar',
+		'id'   => 'sidebar-1',
 		'name' => __( 'Default sidebar', 'showcase' )
 	), showcase_get_default_sidebar_args() );
 
