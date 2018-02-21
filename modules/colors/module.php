@@ -41,7 +41,7 @@ function showcase_colors_fields() {
 			->add_options(array(
 				'default'    => __( 'Default color', 'showcase' ),
 				'predefined' => __( 'Predefined color', 'showcase' ),
-				'custom'     => __( 'Color', 'showcase' )
+				'custom'     => __( 'Custom color', 'showcase' )
 			))
 			->set_description( __( 'This color will be used for the header and footer backgrounds, as well as various accents throughout the theme.', 'showcase' ) ),
 		Field::create( 'image_select', 'predefined_color', __( 'Color', 'showcase' ) )
@@ -94,6 +94,10 @@ function showcase_colors_css() {
 		case 'custom':
 			$color = get_value( 'main_color', 'option' );
 			break;
+	}
+
+	if( ! $color ) {
+		return;
 	}
 
 	$css = "
