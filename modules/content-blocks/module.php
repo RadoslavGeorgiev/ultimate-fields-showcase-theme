@@ -21,14 +21,14 @@ function showcase_blocks_remove_editor() {
  */
 add_action( 'uf.init', 'showcase_blocks_field' );
 function showcase_blocks_field() {
+	$blocks_field = Field::create( 'layout', 'page_content', __( 'Content Blocks', 'showcase' ) );
+
 	// Create a reusable "Button" set of fields.
 	Container::create( 'button' )
 		->add_fields(array(
 			Field::create( 'text', 'text', __( 'Text', 'showcase' ) ),
 			Field::create( 'link', 'link', __( 'Link', 'showcase' ) ),
 		));
-
-	$blocks_field = Field::create( 'layout', 'page_content', __( 'Content Blocks', 'showcase' ) );
 
 	// Text Blocks
 	$blocks_field->add_group( 'text', array(
