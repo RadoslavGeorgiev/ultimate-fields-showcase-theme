@@ -45,7 +45,6 @@ add_filter( 'comment_text', 'showcase_display_comment_tags', 10, 2 );
 function showcase_display_comment_tags( $text, $comment ) {
 	if( $tags = get_value( 'tags', 'comment_' . $comment->comment_ID ) ) {
 		$labels = array();
-
 		foreach( showcase_get_comment_tags() as $key => $label ) {
 			if( in_array( $key, $tags ) ) {
 				$labels[] = $label;
