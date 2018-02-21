@@ -2,6 +2,16 @@
 use UF3\Container;
 use UF3\Field;
 
+/**
+ * Module name: Menu
+ *
+ * @package Ultimate Fields: Showcase
+ * @see readme.md
+ */
+
+/**
+ * Register the fields for the module.
+ */
 add_action( 'uf.init', 'showcase_menu_fields' );
 function showcase_menu_fields() {
 	Container::create( 'Menu Item' )
