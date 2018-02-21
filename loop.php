@@ -6,7 +6,11 @@
 		</h2>
 
 		<div class="rte loop__text">
+			<?php do_action( 'showcase.before_loop_content' ) ?>
+
 			<?php the_content() ?>
+
+			<?php do_action( 'showcase.after_loop_content' ) ?>
 		</div>
 	</div>
 <?php endwhile ?>

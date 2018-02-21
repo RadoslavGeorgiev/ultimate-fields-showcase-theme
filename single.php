@@ -20,7 +20,11 @@
 				<?php endif ?>
 
 				<div class="rte">
+					<?php do_action( 'showcase.before_post_content' ) ?>
+
 					<?php the_content() ?>
+
+					<?php do_action( 'showcase.after_post_content' ) ?>
 				</div>
 
 				<?php if ( comments_open() || get_comments_number() ) : ?>

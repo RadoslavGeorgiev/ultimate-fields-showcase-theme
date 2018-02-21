@@ -2,6 +2,17 @@
 use UF3\Container;
 use UF3\Field;
 
+/**
+ * Module name: Events
+ *
+ * @package Ultimate Fields: Showcase Theme
+ * @see readme.md for details
+ */
+
+
+/**
+ * Registers a new post type for events.
+ */
 add_action( 'init', 'showcase_register_events' );
 function showcase_register_events() {
 	register_post_type( 'event', array(
@@ -20,24 +31,19 @@ function showcase_register_events() {
 			'menu_name'     => __( 'Events', 'showcase' ),
 		)
 	));
+
+	// Ensure that rewrite rules work
+	if( ! get_option( 'event_permalinks_updated' ) ) {
+		flush_rewrite_rules();
+		update_option( 'event_permalinks_updated', true );
+	}
 }
 
-add_filter( 'showcase.content', 'showcase_events_index' );
-function showcase_events_index( $show ) {
-	if( is_post_type_archive( 'event' ) ) {
-		include __DIR__ . '/archive.php';
-		return true;
-	}
-
-	if( is_singular( 'event' ) ) {
-		include __DIR__ . '/single-event.php';
-		return true;
-	}
-
-	return $show;
-}
-
-add_action( 'uf.init', function() {
+/**
+ * Register the needed fields for events.
+ */
+add_action( 'uf.init', 'showcase_add_event_fields' );
+function showcase_add_event_fields() {
 	Container::create( __( 'Event Details', 'showcase' ) )
 		->add_location( 'post_type', 'event' )
 		->set_layout( 'grid' )
@@ -63,3 +69,35 @@ add_action( 'uf.init', function() {
 				->add_dependency( 'event_is_phyisical' )
 		));
 });
+
+/**
+ * Displays the dates of events on the archive page.
+ */
+add_action( 'showcase.before_loop_content', 'showcase_display_event_dates' );
+function showcase_display_event_dates() {
+	if( 'event' != get_post_type() ) {
+		return;
+	}
+
+	?>
+	<p>
+		From <?php the_value( 'event_start' ) ?> until <?php the_value( 'event_end' ) ?>
+	</p>
+	<?php
+}
+
+/**
+ * Shows the map of the event.
+ */
+add_action( 'showcase.before_post_content', 'showcase_display_event_location' );
+function showcase_display_event_location() {
+	if( 'event' != get_post_type() ) {
+		return;
+	}
+
+	if( get_value( 'event_is_phyisical' ) ) {
+		the_value( 'event_location' );
+	}
+
+	showcase_display_event_dates();
+}
