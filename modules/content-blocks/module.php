@@ -41,9 +41,9 @@ function showcase_blocks_field() {
 			Field::create( 'icon', 'icon', __( 'Icon', 'showcase' ) )
 				->add_set( 'font-awesome' )
 				->set_description( __( 'This icon would be shown above the title.', 'showcase' ) )
-				->set_field_width( 35 ),
+				->set_width( 35 ),
 			Field::create( 'text', 'title', __( 'Title', 'showcase' ) )
-				->set_field_width( 65 )
+				->set_width( 65 )
 				->required(),
 			Field::create( 'wysiwyg', 'text', __( 'Text', 'showcase' )  )
 				->apply_the_content(),
