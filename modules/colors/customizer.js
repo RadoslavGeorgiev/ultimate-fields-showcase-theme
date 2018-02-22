@@ -25,7 +25,7 @@
 	}
 
 	$.each( [ 'color_type', 'predefined_color', 'main_color' ], function( i, property ) {
-		UF3.customize.bind( property, function( value ) {
+		UltimateFields.customize.bind( property, function( value ) {
 			state[ property ] = value;
 			updateState();
 		});

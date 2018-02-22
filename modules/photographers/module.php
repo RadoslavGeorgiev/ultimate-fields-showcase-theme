@@ -1,6 +1,6 @@
 <?php
-use UF3\Container;
-use UF3\Field;
+use Ultimate_Fields\Container;
+use Ultimate_Fields\Field;
 
 add_action( 'uf.init', 'showcase_photographer_fields' );
 function showcase_photographer_fields() {

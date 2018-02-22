@@ -27,12 +27,12 @@
         }
     }
 
-    UF3.customize.bind( 'site_layout', function( value, context ) {
+    UltimateFields.customize.bind( 'site_layout', function( value, context ) {
         boxed = 'boxed' === value;
         refresh();
     });
 
-    UF3.customize.bind( 'site_background', function( value, context ) {
+    UltimateFields.customize.bind( 'site_background', function( value, context ) {
         if( value ) {
             background = context.url;
         } else {

@@ -1,6 +1,6 @@
 <?php
-use UF3\Container;
-use UF3\Field;
+use Ultimate_Fields\Container;
+use Ultimate_Fields\Field;
 
 /**
  * Module name: Events

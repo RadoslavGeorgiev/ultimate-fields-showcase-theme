@@ -1,6 +1,6 @@
 <?php
-use UF3\Field;
-use UF3\Container;
+use Ultimate_Fields\Field;
+use Ultimate_Fields\Container;
 
 /**
  * Adds colors to the posts of a category.

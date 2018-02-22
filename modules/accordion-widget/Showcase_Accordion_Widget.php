@@ -1,7 +1,7 @@
 <?php
-use UF3\Custom_Widget;
-use UF3\Container;
-use UF3\Field;
+use Ultimate_Fields\Custom_Widget;
+use Ultimate_Fields\Container;
+use Ultimate_Fields\Field;
 
 class Showcase_Accordion_Widget extends Custom_Widget {
 	public function __construct() {

@@ -18,8 +18,8 @@ Before installing the showcase theme locally, please ensure that:
 Navigate to your wp-content/themes directory and execute the following commands:
 
 ```shell
-git clone git@github.com:RadoslavGeorgiev/uf3-showcase-theme.git
-cd uf3-showcase-theme
+git clone git@github.com:RadoslavGeorgiev/ultimate-fields-showcase-theme.git
+cd ultimate-fields-showcase-theme
 npm install
 npm run build
 ```
@@ -31,4 +31,4 @@ __Ultimate Fields: Showcase__ is a basic and simplistic WordPress theme, which d
 
 The `modules` directory contains multiple optional modules, which can be individually activated. Each module contains examples of one or more locations and one or mode fields, as well as sample PHP code, which shows how to work with the values of those locations and fields.
 
-Please read the [`readme.md`](modules) file of the `modules` directory in order to learn more about modules and the piceces of functionality, which they feature. 
+Please read the [`readme.md`](modules) file of the `modules` directory in order to learn more about modules and the piceces of functionality, which they feature.
