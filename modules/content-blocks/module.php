@@ -109,7 +109,7 @@ function showcase_blocks_field() {
 		'title'     => __( 'Teaser Link', 'showcase' ),
 		'icon'      => 'dashicons-admin-links',
 		'fields'    => array(
-			Field::create( 'object', 'object', __( 'Object', 'showcase' ) )
+			Field::create( 'wp_object', 'object', __( 'Object', 'showcase' ) )
 				->add( 'posts' )
 		)
 	));

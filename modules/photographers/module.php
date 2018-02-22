@@ -7,7 +7,7 @@ function showcase_photographer_fields() {
 	Container::create( 'image-photographer' )
 		->add_location( 'attachment' )
 		->add_fields(array(
-			Field::create( 'object', 'photographer', __( 'Photographer', 'showcase' ) )
+			Field::create( 'wp_object', 'photographer', __( 'Photographer', 'showcase' ) )
 				->add( 'users' )
 		));
 
