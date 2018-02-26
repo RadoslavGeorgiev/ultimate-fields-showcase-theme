@@ -25,7 +25,6 @@ function showcase_shortcode_fields() {
 			Field::create( 'color', 'background_color', __( 'Background Color', 'showcase' ) )
 				->required()
 				->set_default_value( '#eeeeee' ),
-
 		));
 }
 
