@@ -68,7 +68,7 @@ function showcase_add_event_fields() {
 				->set_output_width( 1200 )
 				->add_dependency( 'event_is_phyisical' )
 		));
-});
+}
 
 /**
  * Displays the dates of events on the archive page.
