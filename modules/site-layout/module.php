@@ -51,19 +51,22 @@ function showcase_layout_class( $classes ) {
  */
 add_action( 'wp_enqueue_scripts', 'showcase_layout_css', 20 );
 function showcase_layout_css() {
-    if( 'boxed' == get_value( 'site_layout', 'option' ) ) {
-        $image = get_value( 'site_background', 'option' );
-
-        if( $image ) {
-            $url = wp_get_attachment_url( $image );
-
-            $css = " body.boxed {
-                background-image: url($url);
-            } ";
-
-            wp_add_inline_style( 'site-layout', $css );
-        }
+    if( 'boxed' != get_value( 'site_layout', 'option' ) ) {
+        return;
     }
+
+    $image = get_value( 'site_background', 'option' );
+    if( ! $image ) {
+        return;
+    }
+
+    $url = wp_get_attachment_url( $image );
+
+    $css = " body.boxed {
+        background-image: url($url);
+    } ";
+
+    wp_add_inline_style( 'site-layout', $css );
 }
 
 /**
@@ -74,4 +77,17 @@ function showcase_layout_js() {
 	$uri = get_template_directory_uri() . '/modules/site-layout/customizer.js';
 
 	wp_enqueue_script( 'showcase-layout', $uri, array( 'jquery', 'uf-customize-preview' ), '', true );
+
+    // Prepare a state
+    $layout     = get_value( 'site_layout', 'option' );
+    $background = get_value( 'site_background', 'option' );
+
+    if( $background ) {
+        $background = wp_get_attachment_url( $background );
+    }
+
+    wp_localize_script( 'showcase-layout', 'showcase_layout_vars', array(
+        'site_layout'     => $layout,
+        'site_background' => $background
+    ));
 }

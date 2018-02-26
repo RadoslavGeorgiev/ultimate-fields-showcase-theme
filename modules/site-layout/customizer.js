@@ -1,23 +1,12 @@
 (function(){
 
-    var boxed = $( 'body' ).is( '.boxed' );
-    var background = false;
-
-    if( boxed ) {
-        background = $( 'body' ).css( 'background-image' );
-
-        if( background && 'none' === background ) {
-            background = false;
-        } else {
-            background = background.replace( 'url(', '' ).replace( ')', '' );
-        }
-    }
+    var state = showcase_layout_vars;
 
     function refresh() {
-        if( boxed ) {
+        if( 'boxed' == state.site_layout ) {
             $( 'body' ).addClass( 'boxed' ).css({
-                backgroundImage: background
-                    ? 'url(' + background + ')'
+                backgroundImage: state.site_background
+                    ? 'url(' + state.site_background + ')'
                     : 'none'
             });
         } else {
@@ -28,15 +17,15 @@
     }
 
     UltimateFields.customize.bind( 'site_layout', function( value, context ) {
-        boxed = 'boxed' === value;
+        state.site_layout = value;
         refresh();
     });
 
     UltimateFields.customize.bind( 'site_background', function( value, context ) {
         if( value ) {
-            background = context.url;
+            state.site_background = context.url;
         } else {
-            background = false;
+            state.site_background = false;
         }
 
         refresh();
