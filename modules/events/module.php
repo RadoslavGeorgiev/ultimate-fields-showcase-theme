@@ -1,6 +1,6 @@
 <?php
-use UF3\Container;
-use UF3\Field;
+use Ultimate_Fields\Container;
+use Ultimate_Fields\Field;
 
 /**
  * Module name: Events
@@ -52,10 +52,10 @@ function showcase_add_event_fields() {
 				->set_icon( 'dashicons-calendar' )
 				->set_color( 'blue' ),
 			Field::create( 'date', 'event_start', __(  'Starting date', 'showcase' ) )
-				->set_field_width( 50 )
+				->set_width( 50 )
 				->required(),
 			Field::create( 'date', 'event_end',   __(  'End date', 'showcase' ) )
-				->set_field_width( 50 )
+				->set_width( 50 )
 				->required(),
 			Field::create( 'section', 'location', __( 'Location', 'showcase' ) )
 				->set_icon( 'dashicons-location-alt' )

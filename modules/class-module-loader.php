@@ -1,6 +1,6 @@
 <?php
-use UF3\Container;
-use UF3\Field;
+use Ultimate_Fields\Container;
+use Ultimate_Fields\Field;
 
 /**
  * Loads modules for the theme.
@@ -118,7 +118,7 @@ class Module_Loader {
 	 *
 	 * @since 3.0
 	 *
-	 * @param UF3\Options_Page $page The page to control modules.
+	 * @param Ultimate_Fields\Options_Page $page The page to control modules.
 	 */
 	public function register_options_container( $page ) {
 		$modules = array();

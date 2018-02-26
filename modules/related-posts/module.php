@@ -1,6 +1,6 @@
 <?php
-use UF3\Container;
-use UF3\Field;
+use Ultimate_Fields\Container;
+use Ultimate_Fields\Field;
 
 /**
  * Related Posts Module
@@ -15,7 +15,7 @@ function showcase_related_posts_fields() {
         ->add_location( 'post_type', 'post' )
         ->set_description_position( 'label' )
         ->add_fields(array(
-            Field::create( 'objects', 'related_posts', __( 'Related Posts', 'showcase' ) )
+            Field::create( 'wp_objects', 'related_posts', __( 'Related Posts', 'showcase' ) )
                 ->add( 'posts', 'post_type=post' )
                 ->set_description( __( 'Related posts will be shown at the end of the post.', 'showcase' ) )
                 ->set_button_text( __( 'Select posts', 'showcase' ) )

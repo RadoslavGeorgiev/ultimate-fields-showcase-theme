@@ -1,5 +1,5 @@
 <?php
-use UF3\Options_Page;
+use Ultimate_Fields\Options_Page;
 
 // Register theme supports
 add_theme_support( 'title-tag' );

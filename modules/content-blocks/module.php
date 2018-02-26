@@ -1,6 +1,6 @@
 <?php
-use UF3\Container;
-use UF3\Field;
+use Ultimate_Fields\Container;
+use Ultimate_Fields\Field;
 
 /**
  * Remove the normal editor from the page, as we will be using content blocks for that.
@@ -41,9 +41,9 @@ function showcase_blocks_field() {
 			Field::create( 'icon', 'icon', __( 'Icon', 'showcase' ) )
 				->add_set( 'font-awesome' )
 				->set_description( __( 'This icon would be shown above the title.', 'showcase' ) )
-				->set_field_width( 35 ),
+				->set_width( 35 ),
 			Field::create( 'text', 'title', __( 'Title', 'showcase' ) )
-				->set_field_width( 65 )
+				->set_width( 65 )
 				->required(),
 			Field::create( 'wysiwyg', 'text', __( 'Text', 'showcase' )  )
 				->apply_the_content(),
@@ -109,7 +109,7 @@ function showcase_blocks_field() {
 		'title'     => __( 'Teaser Link', 'showcase' ),
 		'icon'      => 'dashicons-admin-links',
 		'fields'    => array(
-			Field::create( 'object', 'object', __( 'Object', 'showcase' ) )
+			Field::create( 'wp_object', 'object', __( 'Object', 'showcase' ) )
 				->add( 'posts' )
 		)
 	));
