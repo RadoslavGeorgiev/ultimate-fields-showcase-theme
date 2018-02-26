@@ -76,3 +76,5 @@ if( 0 === $depth && 'widgets' == get_value( 'sub_menu_type', $item->ID ) ) {
 As you can see, we are checking whether the menu item is a top-level one and whether `widgets` has been selected as the sub-menu type. If it is, we are using the `render_sidebar` method in order to append the sidebar to the menu item.
 
 ### `render_sidebar`
+
+The `render_sidebar` method renders a sidebar through `dynamic_sidebar`, but wraps it in `ob_start` and `ob_get_clean` in order to buffer the output. This way, it is later wrapped within some DIV elements and returned as a string in order to be added to the output by `start_el`.
