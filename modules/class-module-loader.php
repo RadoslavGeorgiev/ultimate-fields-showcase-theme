@@ -17,6 +17,13 @@ class Module_Loader {
 	protected $modules = array();
 
 	/**
+	 * Saves a flag, which contains disabled modules.
+	 *
+	 * @var string[]
+	 */
+	protected $disabled = array();
+
+	/**
 	 * Creates and returns an instance of the loader.
 	 *
 	 * @return Module_Loader
@@ -91,6 +98,11 @@ class Module_Loader {
 			wp_die( 'A module needs the following attributes: title, pro, path, url and redirect!' );
 		}
 
+		if( $module['pro'] && ( ! defined( 'ULTIMATE_FIELDS_PRO' ) || ! ULTIMATE_FIELDS_PRO ) ) {
+			$this->disabled[] = $module['title'];
+			return $this;
+		}
+
 		$module['path'] = trailingslashit( $module['path'] );
 		$module['url']  = trailingslashit( $module['url'] );
 		$this->modules[ $id ] = $module;
@@ -143,12 +155,18 @@ class Module_Loader {
 			$modules[ $id ] = $title;
 		}
 
+		$description = __( 'Select the modules you want to have enabled as a showcase.', 'showcase' );
+
+		if( ! empty( $this->disabled ) ) {
+			$description .= "\n\n" . __( 'Some modules are ignored because they require Ultimate Fields Pro', 'showcase' );
+		}
+
 		Container::create( 'Showcase Modules' )
 			->add_location( 'options', $page )
 			->set_description_position( 'label' )
 			->add_fields(array(
 				Field::create( 'multiselect', 'showcase_modules', __( 'Modules', 'showcase' ) )
-					->set_description( __( 'Select the modules you want to have enabled as a showcase.', 'showcase' ) )
+					->set_description( $description )
 					->set_input_type( 'checkbox' )
 					->add_options( $modules )
 			));

@@ -67,7 +67,7 @@ function showcase_builtin_modules( $loader ) {
 
 	$loader->add_module( 'accordion-widget', array(
 		'title'    => __( 'Accordion Widget', 'showcase' ),
-		'pro'      => false,
+		'pro'      => true,
 		'path'     => __DIR__ . '/modules/accordion-widget',
 		'url'      => get_template_directory_uri() . '/modules/accordion-widget',
 		'redirect' => home_url( 'wp-admin/widgets.php' )
@@ -75,7 +75,7 @@ function showcase_builtin_modules( $loader ) {
 
 	$loader->add_module( 'related-posts', array(
 		'title'    => __( 'Related Posts', 'showcase' ),
-		'pro'      => true,
+		'pro'      => false,
 		'path'     => __DIR__ . '/modules/related-posts',
 		'url'      => get_template_directory_uri() . '/modules/related-posts',
 		'redirect' => admin_url( 'post.php?post=1&action=edit' )
@@ -83,7 +83,7 @@ function showcase_builtin_modules( $loader ) {
 
 	$loader->add_module( 'team', array(
 		'title'    => __( 'Team', 'showcase' ),
-		'pro'      => true,
+		'pro'      => false,
 		'path'     => __DIR__ . '/modules/team',
 		'url'      => get_template_directory_uri() . '/modules/team',
 		'redirect' => admin_url( 'post.php?post=2&action=edit' )
@@ -91,7 +91,7 @@ function showcase_builtin_modules( $loader ) {
 
 	$loader->add_module( 'site-layout', array(
 		'title'    => __( 'Site Layout', 'showcase' ),
-		'pro'      => false,
+		'pro'      => true,
 		'path'     => __DIR__ . '/modules/site-layout',
 		'url'      => get_template_directory_uri() . '/modules/site-layout',
 		'redirect' => admin_url( 'themes.php?page=theme-options' )
