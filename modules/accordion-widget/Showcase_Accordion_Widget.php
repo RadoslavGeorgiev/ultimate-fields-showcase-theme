@@ -1,5 +1,5 @@
 <?php
-use Ultimate_Fields\Pro\Custom_Widget;
+use Ultimate_Fields\Custom_Widget;
 use Ultimate_Fields\Container;
 use Ultimate_Fields\Field;
 

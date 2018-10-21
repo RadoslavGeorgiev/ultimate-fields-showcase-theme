@@ -98,10 +98,10 @@ class Module_Loader {
 			wp_die( 'A module needs the following attributes: title, pro, path, url and redirect!' );
 		}
 
-		if( $module['pro'] && ( ! defined( 'ULTIMATE_FIELDS_PRO' ) || ! ULTIMATE_FIELDS_PRO ) ) {
-			$this->disabled[] = $module['title'];
-			return $this;
-		}
+		// if( $module['pro'] && ( ! defined( 'ULTIMATE_FIELDS_PRO' ) || ! ULTIMATE_FIELDS_PRO ) ) {
+		// 	$this->disabled[] = $module['title'];
+		// 	return $this;
+		// }
 
 		$module['path'] = trailingslashit( $module['path'] );
 		$module['url']  = trailingslashit( $module['url'] );
